@@ -2,7 +2,7 @@
 
 import { useRef, useState, type CSSProperties } from "react";
 
-import { DragScrollbarTemp } from "@/components/ui/DragScrollbar/DragScrollbarTemp";
+import { DragScrollbar } from "@/components/ui/DragScrollbar/DragScrollbar";
 import { setLeadSource } from "@/lib/leadSource";
 
 import { type Ticket, getTicketsData } from "./Tickets.data";
@@ -103,7 +103,7 @@ export function Tickets({ dateKey }: { dateKey: string }) {
           ))}
         </div>
 
-        <DragScrollbarTemp targetRef={scrollerRef} className={styles.scrollbar} />
+        <DragScrollbar targetRef={scrollerRef} className={styles.scrollbar} />
       </div>
     </section>
   );
