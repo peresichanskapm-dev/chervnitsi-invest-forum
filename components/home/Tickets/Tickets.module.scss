@@ -22,23 +22,19 @@
   display: flex;
   overflow-x: auto;
   overflow-y: visible;
-  padding: 0 max(var(--container-gutter), calc((100vw - var(--container-width)) / 2)) 3.2rem;
-  scroll-snap-type: x mandatory;
+  padding: 0 max(var(--container-gutter), calc((100vw - var(--container-width)) / 2));
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--brand-lime) #5d5d5d;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scroller::-webkit-scrollbar {
-  height: 0.4rem;
+  display: none;
 }
 
-.scroller::-webkit-scrollbar-track {
-  background: #5d5d5d;
-}
-
-.scroller::-webkit-scrollbar-thumb {
-  background: var(--brand-lime);
+.scrollbar {
+  width: auto;
+  margin: 3.2rem max(var(--container-gutter), calc((100vw - var(--container-width)) / 2)) 0;
 }
 
 /* display:flex (not height:100%) so an expanded card can push the row taller instead of overflowing */

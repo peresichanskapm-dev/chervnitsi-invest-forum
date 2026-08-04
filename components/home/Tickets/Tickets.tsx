@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useRef, useState, type CSSProperties } from "react";
 
+import { DragScrollbar } from "@/components/ui/DragScrollbar/DragScrollbar";
 import { setLeadSource } from "@/lib/leadSource";
 
 import { type Ticket, getTicketsData } from "./Tickets.data";
@@ -75,6 +76,7 @@ function TicketCard({ ticket, expandLabel, collapseLabel }: CardProps) {
 
 export function Tickets({ dateKey }: { dateKey: string }) {
   const { title, tickets, expandLabel, collapseLabel } = getTicketsData(dateKey);
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className={styles.tickets} id="tickets">
@@ -83,7 +85,7 @@ export function Tickets({ dateKey }: { dateKey: string }) {
       </h2>
 
       <div className={styles.container}>
-        <div className={styles.scroller} role="list" aria-label={title}>
+        <div ref={scrollerRef} className={styles.scroller} role="list" aria-label={title}>
           {tickets.map((ticket, index) => (
             <div
               key={ticket.name}
@@ -100,6 +102,8 @@ export function Tickets({ dateKey }: { dateKey: string }) {
             </div>
           ))}
         </div>
+
+        <DragScrollbar targetRef={scrollerRef} className={styles.scrollbar} />
       </div>
     </section>
   );
