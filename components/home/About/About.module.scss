@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  padding: 6.4rem 0;
+  background: var(--color-bg);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+.eyebrow {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  /* the mark sits inline with the wordmark, so both have to fit a 320px screen */
+  font-size: min(4rem, 8.5vw);
+}
+
+.mark {
+  flex: none;
+  width: auto;
+  /* cap height of the first line, so the mark tracks the type size instead of a fixed rem */
+  height: 0.74em;
+  margin-top: 0.1em;
+}
+
+.titleText {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  line-height: 1.09;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  span:nth-child(2) {
+    padding-left: 1.88em;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.paragraph {
+  /* the design breaks the last sentence onto its own line inside the same paragraph */
+  white-space: pre-line;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.highlight {
+  --brand-gradient-angle: 90deg;
+
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 10rem 0;
+  }
+
+  .grid {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8rem;
+    margin-top: 6.4rem;
+  }
+
+  .title {
+    flex: none;
+    gap: 1.6rem;
+    /* the design keeps the wordmark on three lines, so it has to shrink with the viewport */
+    font-size: min(8.3rem, 5.9vw);
+  }
+
+  .titleText {
+    white-space: nowrap;
+  }
+
+  .copy {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 60rem;
+    gap: 2.4rem;
+  }
+
+  .paragraph {
+    font-size: 2rem;
+  }
+}

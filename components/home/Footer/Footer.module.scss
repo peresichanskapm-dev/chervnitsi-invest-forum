@@ -1,0 +1,163 @@
+.footer {
+  padding: 4rem 0 2.4rem;
+  background: var(--color-bg);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo img {
+  width: auto;
+  height: 3.8rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contactLabel {
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.contactName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.contactPhone {
+  font-size: 1.6rem;
+  color: var(--brand-lime);
+  transition: opacity 0.2s ease;
+}
+
+.contactPhone:hover {
+  opacity: 0.75;
+}
+
+.socials {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.social {
+  width: 4rem;
+  height: 4rem;
+  color: var(--brand-lime);
+  transition:
+    transform 0.25s var(--ease-out-soft),
+    opacity 0.2s ease;
+}
+
+.social:hover {
+  transform: translateY(-0.4rem) scale(1.08);
+  opacity: 0.85;
+}
+
+.social svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bottom {
+  margin-top: 3.2rem;
+  padding-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  border-top: 0.1rem solid rgba(210, 210, 210, 0.6);
+
+  a {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--brand-lime);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    padding: 4.8rem 0 2.4rem;
+  }
+
+  .top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .logo img {
+    height: 4.4rem;
+  }
+
+  .contacts {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .contactLabel {
+    font-size: 1.6rem;
+  }
+
+  .contactName {
+    font-size: 2rem;
+  }
+
+  .contactPhone {
+    font-size: 1.8rem;
+  }
+
+  .social {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .bottom {
+    margin-top: 4rem;
+    padding-top: 2.4rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.6rem;
+    font-size: 1.6rem;
+  }
+}

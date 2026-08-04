@@ -1,0 +1,186 @@
+.section {
+  padding: 6.4rem 0;
+  background: var(--color-bg);
+}
+
+.eyebrow {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.lockup {
+  margin: 1.6rem 0 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.mark {
+  width: auto;
+  height: 6.4rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.form {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.input {
+  width: 100%;
+  height: 5.6rem;
+  padding: 0 2rem;
+  font: inherit;
+  font-size: 1.6rem;
+  color: var(--color-text);
+  background: transparent;
+  border: 0.1rem solid #686868;
+  border-radius: 0;
+  appearance: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.input:hover {
+  border-color: #9c9c9c;
+}
+
+.input::placeholder {
+  color: rgba(236, 236, 236, 0.8);
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: var(--brand-lime);
+  box-shadow: 0 0 0 0.3rem rgba(192, 246, 3, 0.15);
+}
+
+.input[aria-invalid="true"] {
+  border-color: #ff6b6b;
+}
+
+.submitWrap {
+  display: grid;
+}
+
+.submit {
+  --brand-gradient-angle: 90deg;
+
+  height: 5.6rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--brand-gradient);
+  transition:
+    transform 0.2s var(--ease-out-soft),
+    box-shadow 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.submit:hover:not(:disabled) {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1.2rem 2.4rem rgba(192, 246, 3, 0.2);
+}
+
+.submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+@keyframes formStatusIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.8rem, 0);
+  }
+}
+
+.error {
+  font-size: 1.3rem;
+  color: #ff6b6b;
+  animation: formStatusIn 0.3s var(--ease-out-soft) both;
+}
+
+.success,
+.failure {
+  font-size: 1.4rem;
+  animation: formStatusIn 0.35s var(--ease-out-soft) both;
+}
+
+.success {
+  color: var(--brand-lime);
+}
+
+.failure {
+  color: #ff6b6b;
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 9.6rem 0 10.4rem;
+  }
+
+  .eyebrow {
+    font-size: 2.2rem;
+  }
+
+  .lockup {
+    margin: 2.8rem 0 4.4rem;
+    gap: 3rem;
+  }
+
+  .mark {
+    height: 17.2rem;
+  }
+
+  .title {
+    font-size: 9.6rem;
+  }
+
+  .form {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+  }
+
+  .input,
+  .submit {
+    height: 5.6rem;
+  }
+
+  .input {
+    padding: 0 2.4rem;
+    font-size: 1.8rem;
+  }
+
+  .submit {
+    font-size: 1.8rem;
+  }
+
+  .success,
+  .failure {
+    grid-column: 1 / -1;
+  }
+}

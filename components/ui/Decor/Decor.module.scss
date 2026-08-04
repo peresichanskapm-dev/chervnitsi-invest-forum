@@ -1,0 +1,44 @@
+.decor {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .decor {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  /* matches the container content box, so the clusters keep their place in the grid */
+  .inner {
+    position: relative;
+    width: calc(100% - var(--container-gutter) * 2);
+    max-width: var(--container-width);
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  @keyframes decorFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    to {
+      opacity: 0.1;
+      transform: none;
+    }
+  }
+
+  .square {
+    position: absolute;
+    background: linear-gradient(90deg, #b4b4b4 0%, #ebebeb 100%);
+    opacity: 0.1;
+  }
+
+  /* the squares only start once their cluster is on screen */
+  .decor[data-reveal-visible] .square {
+    animation: decorFadeIn 0.6s var(--ease-out-soft) both;
+    animation-delay: calc(var(--decor-index, 0) * 0.05s);
+  }
+}
