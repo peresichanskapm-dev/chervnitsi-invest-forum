@@ -1,0 +1,22 @@
+.track {
+  position: relative;
+  width: 100%;
+  height: 0.4rem;
+  border-radius: 100rem;
+  background: #5d5d5d;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 100rem;
+  background: var(--brand-gradient);
+}
