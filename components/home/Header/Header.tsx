@@ -29,10 +29,32 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
 
+  /*
+   * globals.scss puts `overflow-x: hidden` on `html`, which makes `html` the scrolling box —
+   * overflow on `body` stops propagating to the viewport, so locking `body` alone does nothing.
+   * Pinning the body at a negative offset also stops iOS rubber-banding behind the overlay.
+   */
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+
+    const { documentElement: root, body } = document;
+    const scrollY = window.scrollY;
+
+    root.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `${-scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
     return () => {
-      document.body.style.overflow = "";
+      root.style.overflow = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
