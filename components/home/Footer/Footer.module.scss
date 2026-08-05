@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  padding: 0.6rem 0;
+  margin: -0.6rem 0;
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.1;
@@ -71,8 +73,12 @@
 }
 
 .social {
-  width: 4rem;
-  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  padding: 0.2rem;
   color: var(--brand-lime);
   transition:
     transform 0.25s var(--ease-out-soft),
@@ -102,6 +108,9 @@
   border-top: 0.1rem solid rgba(210, 210, 210, 0.6);
 
   a {
+    display: inline-block;
+    padding: 1.4rem 0;
+    margin: -1.4rem 0;
     transition: color 0.2s ease;
 
     &:hover {
