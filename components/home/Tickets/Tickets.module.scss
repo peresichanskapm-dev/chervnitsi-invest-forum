@@ -18,25 +18,49 @@
   position: relative;
 }
 
-.scroller {
+/* overflow: visible is the whole trick — Swiper translates the wrapper, so the next card
+   peeks past the container edge instead of being clipped at it.
+   Doubled with :global so it outranks swiper/css's own `.swiper { overflow: hidden }`,
+   which has identical specificity and whose import order Next does not guarantee. */
+.swiper {
+  overflow: visible;
+
+  &:global(.swiper) {
+    overflow: visible;
+  }
+}
+
+.fallbackScroller {
   display: flex;
   overflow-x: auto;
   /* `visible` computes to `auto` next to a scrolling axis, which spawns a stray vertical bar */
   overflow-y: hidden;
-  padding: 0 max(var(--container-gutter), calc((100vw - var(--container-width)) / 2));
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
-.scroller::-webkit-scrollbar {
+.fallbackScroller::-webkit-scrollbar {
   display: none;
 }
 
 .scrollbar {
-  width: auto;
-  margin: 3.2rem max(var(--container-gutter), calc((100vw - var(--container-width)) / 2)) 0;
+  height: 0.4rem;
+  margin: 3.2rem 0 0;
+  border-radius: 999px;
+
+  /* doubled selector so it outranks swiper/css/scrollbar's own .swiper-scrollbar background,
+     whose specificity is identical and whose import order Next does not guarantee */
+  &:global(.swiper-scrollbar) {
+    background: #2a2a2a;
+  }
+
+  :global(.swiper-scrollbar-drag) {
+    --brand-gradient-angle: 90deg;
+
+    border-radius: 999px;
+    background: var(--brand-gradient);
+  }
 }
 
 /* display:flex (not height:100%) so an expanded card can push the row taller instead of overflowing */
@@ -44,9 +68,18 @@
   display: flex;
   flex-shrink: 0;
   width: 85vw;
-  max-width: 30rem;
+  max-width: 40rem;
   padding: 0 0.8rem;
   scroll-snap-align: start;
+
+  /* beats swiper/css's `.swiper-slide { display: block; height: 100% }`. `height: auto` is the
+     load-bearing half: the wrapper is a flex row with the default `align-items: stretch`, so an
+     auto-height slide grows to the tallest one, while `height: 100%` would resolve against a
+     wrapper of height auto and collapse each card onto its own content. */
+  &:global(.swiper-slide) {
+    display: flex;
+    height: auto;
+  }
 }
 
 .card {
@@ -195,7 +228,7 @@
 
 @media (min-width: 576px) {
   .slide {
-    width: 26.3rem;
+    width: 35rem;
     padding: 0 1.6rem;
   }
 }
@@ -208,7 +241,7 @@
 
 @media (min-width: 992px) {
   .slide {
-    width: 40rem;
+    width: 60rem;
   }
 
   .card {
