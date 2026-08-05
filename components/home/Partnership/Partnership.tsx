@@ -16,9 +16,8 @@ export function Partnership() {
           className={styles.photo}
           src={photo.src}
           alt={photo.alt}
-          width={1440}
-          height={960}
-          sizes="100vw"
+          fill
+          sizes="(max-width: 991px) 140vw, 100vw"
         />
         <span className={styles.veil} />
       </div>
