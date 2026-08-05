@@ -26,6 +26,7 @@
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scroll-snap-type: x mandatory;
 }
 
 .scroller::-webkit-scrollbar {
@@ -41,7 +42,8 @@
 .slide {
   display: flex;
   flex-shrink: 0;
-  width: 30rem;
+  width: 85vw;
+  max-width: 30rem;
   padding: 0 0.8rem;
   scroll-snap-align: start;
 }
