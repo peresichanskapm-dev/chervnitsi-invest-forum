@@ -6,7 +6,7 @@ export type FooterContact = {
 };
 
 export type FooterSocial = {
-  id: "instagram" | "facebook";
+  id: "instagram";
   label: string;
   href: string;
 };
@@ -19,10 +19,12 @@ export const footerData = {
   },
   // contact blocks are intentionally empty — add entries here to bring them back
   contacts: [] as FooterContact[],
-  // TODO: real profile URLs pending from the client
   socials: [
-    { id: "instagram", label: "Instagram", href: "#" },
-    { id: "facebook", label: "Facebook", href: "#" },
+    {
+      id: "instagram",
+      label: "Instagram",
+      href: "https://www.instagram.com/chernivtsi_invest/",
+    },
   ] satisfies FooterSocial[],
   copyright: "© 2026 Chernivtsi INVEST FORUM. All rights are reserved.",
   developedBy: {
