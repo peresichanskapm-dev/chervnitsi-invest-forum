@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 64rem;
+  min-height: 78rem;
   overflow: hidden;
   background: var(--color-bg);
 
@@ -26,7 +26,7 @@
 .canvas {
   position: relative;
   width: 100%;
-  padding: 14rem var(--container-gutter) 4.8rem;
+  padding: 9rem var(--container-gutter) 4.8rem;
 }
 
 .photo {
