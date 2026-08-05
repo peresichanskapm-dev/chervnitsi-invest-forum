@@ -15,12 +15,12 @@ export const speakersData = {
     {
       firstName: "Роман",
       lastName: "Клічук",
-      photo: "/images/speakers/klichuk.webp",
+      photo: "/images/speakers/klichuk-v2.webp",
     },
     {
       firstName: "Дмитро",
       lastName: "Лукенчук",
-      photo: "/images/speakers/lukenchuk.webp",
+      photo: "/images/speakers/lukenchuk-v3.webp",
     },
     {
       firstName: "Катерина",
@@ -31,6 +31,21 @@ export const speakersData = {
       firstName: "Руслан",
       lastName: "Осипенко",
       photo: "/images/speakers/osypenko.webp",
+    },
+    {
+      firstName: "Яна",
+      lastName: "Рогожа",
+      photo: "/images/speakers/rohozha.webp",
+    },
+    {
+      firstName: "Тарас",
+      lastName: "Бачинський",
+      photo: "/images/speakers/bachynskyi-taras.webp",
+    },
+    {
+      firstName: "Остап",
+      lastName: "Бачинський",
+      photo: "/images/speakers/bachynskyi-ostap.webp",
     },
   ],
 };
