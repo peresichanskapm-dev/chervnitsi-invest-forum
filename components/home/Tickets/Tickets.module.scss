@@ -21,7 +21,8 @@
 .scroller {
   display: flex;
   overflow-x: auto;
-  overflow-y: visible;
+  /* `visible` computes to `auto` next to a scrolling axis, which spawns a stray vertical bar */
+  overflow-y: hidden;
   padding: 0 max(var(--container-gutter), calc((100vw - var(--container-width)) / 2));
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
@@ -57,14 +58,6 @@
   padding: 3.2rem 1.6rem;
   border: 0.1rem solid var(--brand-lime);
   background: #070707;
-  transition:
-    transform 0.3s var(--ease-out-soft),
-    box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-0.6rem);
-    box-shadow: 0 1.6rem 3.2rem rgba(192, 246, 3, 0.14);
-  }
 }
 
 .cardHeader {

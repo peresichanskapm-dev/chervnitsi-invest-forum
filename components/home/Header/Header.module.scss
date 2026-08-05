@@ -6,10 +6,14 @@
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   z-index: 20;
   padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: #050505;
+  backdrop-filter: blur(1.2rem);
+  -webkit-backdrop-filter: blur(1.2rem);
   /* safe despite the transform: the mobile menu is portalled to body, not nested here */
   animation: headerDrop 0.7s var(--ease-out-soft) both;
 }
@@ -201,6 +205,7 @@
 @media (min-width: 992px) {
   .header {
     padding-top: 3.2rem;
+    padding-bottom: 2.4rem;
   }
 
   .nav {

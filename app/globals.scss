@@ -35,6 +35,11 @@ body {
   overflow-x: hidden;
 }
 
+/* the header is fixed, so anchor targets have to clear it */
+section[id] {
+  scroll-margin-top: 8rem;
+}
+
 body {
   min-height: 100%;
   display: flex;
@@ -82,6 +87,10 @@ svg {
 @media (min-width: 992px) {
   :root {
     --container-gutter: 4rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 12rem;
   }
 }
 

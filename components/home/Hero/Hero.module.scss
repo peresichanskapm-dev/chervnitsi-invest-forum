@@ -1,13 +1,11 @@
 .hero {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 78rem;
   overflow: hidden;
   background: var(--color-bg);
 
   &::after {
     content: "";
+    display: none;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -29,13 +27,19 @@
   padding: 9rem var(--container-gutter) 4.8rem;
 }
 
+/* mobile stacks the composition: green plate, then the theater, then the actions */
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
 .photo {
-  position: absolute;
-  inset: 0;
+  order: 2;
+  position: relative;
+  aspect-ratio: 1074 / 886;
 
   img {
-    position: absolute;
-    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -44,6 +48,7 @@
 }
 
 .fade {
+  display: none;
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -56,7 +61,6 @@
 
 .glow,
 .decor,
-.plateShape,
 .square {
   display: none;
 }
@@ -101,9 +105,27 @@
   animation: heroFade 1.2s var(--ease-out-soft) both;
 }
 
+/*
+ * The plate is a scaled-down copy of the desktop composition: the shape stretches
+ * (the SVG is preserveAspectRatio="none") and every child is placed in percentages of
+ * it, so the layout survives any viewport. The box is deliberately taller than the
+ * SVG's native 762.551x374.479 — the small type has a readable rem floor and needs
+ * more vertical room than a pure proportional scale would give it.
+ */
 .plate {
+  order: 1;
   position: relative;
   z-index: 2;
+  container-type: inline-size;
+  aspect-ratio: 762.551 / 580;
+}
+
+.plateShape {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .date {
@@ -123,14 +145,17 @@
 }
 
 .date {
+  position: absolute;
+  left: 10.41%;
+  top: 16%;
   display: flex;
   align-items: center;
-  gap: 2.2rem;
-  font-size: 1.4rem;
+  gap: 1.97em;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: var(--brand-lime);
+  color: var(--color-ink);
 }
 
 .year {
@@ -140,9 +165,9 @@
     content: "";
     position: absolute;
     top: 50%;
-    left: -1.4rem;
-    width: 0.83rem;
-    height: 0.83rem;
+    left: -1.4em;
+    width: 0.53em;
+    height: 0.53em;
     border-radius: 50%;
     background: currentColor;
     transform: translateY(-50%);
@@ -150,37 +175,37 @@
 }
 
 .title {
-  --brand-gradient-angle: 146deg;
-
-  margin-top: 1.6rem;
+  position: absolute;
+  left: 10.41%;
+  top: 24%;
   display: flex;
   flex-direction: column;
-  font-size: 4rem;
+  /* sized against the plate, not the viewport, so it tracks the shape it sits on */
+  font-size: 10.5cqw;
   font-weight: 600;
   line-height: 0.97;
   text-transform: uppercase;
-  background: var(--brand-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--color-ink);
 }
 
 .tagline {
-  margin-top: 1.6rem;
-  font-size: 1.4rem;
+  position: absolute;
+  left: 10.41%;
+  top: 58%;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .actions {
+  order: 3;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-top: 3.2rem;
 }
 
 .buttonGhost,
@@ -224,9 +249,19 @@
 
 @media (min-width: 992px) {
   .hero {
+    display: flex;
     align-items: flex-start;
     /* stage top + stage height — the design frame is taller than its own content */
     min-height: 96.3rem;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  /* desktop places every child by hand, so the mobile stack is unwound */
+  .stage {
+    display: block;
   }
 
   .canvas {
@@ -279,6 +314,8 @@
   }
 
   .photo {
+    position: absolute;
+    aspect-ratio: auto;
     inset: auto;
     left: 62.3rem;
     top: -6.2rem;
@@ -287,6 +324,7 @@
     overflow: hidden;
 
     img {
+      position: absolute;
       object-fit: fill;
       /* the design crops the render inside its frame instead of scaling it to fit */
       inset: auto;
@@ -299,6 +337,7 @@
   }
 
   .fade {
+    display: block;
     inset: auto;
     left: -1.6rem;
     top: 52.765rem;
@@ -313,6 +352,8 @@
 
   .plate {
     position: absolute;
+    container-type: normal;
+    aspect-ratio: auto;
     left: 0;
     top: 0;
     width: 100%;

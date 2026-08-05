@@ -6,6 +6,7 @@
 .top {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 3.2rem;
 }
 
@@ -36,13 +37,16 @@
 .contacts {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2.4rem;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.4rem;
+  text-align: center;
 }
 
 .contactLabel {
@@ -69,6 +73,7 @@
 
 .socials {
   display: flex;
+  justify-content: center;
   gap: 1.6rem;
 }
 
@@ -142,6 +147,15 @@
   .contacts {
     flex-direction: row;
     gap: 4rem;
+  }
+
+  .contact {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .socials {
+    justify-content: flex-start;
   }
 
   .contactLabel {
