@@ -1,17 +1,19 @@
 .hero {
   position: relative;
   overflow: hidden;
+  /* the header is fixed and opaque, so the banner has to start below it */
+  padding-top: 7.73rem;
   background: var(--color-bg);
 
   &::after {
     content: "";
-    display: none;
+    display: block;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1;
-    height: 16rem;
+    height: 8rem;
     background: linear-gradient(
       180deg,
       rgba(5, 5, 5, 0) 0%,
@@ -21,61 +23,21 @@
   }
 }
 
-.canvas {
+.srOnly {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  margin: -0.1rem;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.banner {
   position: relative;
   width: 100%;
-  padding: 9rem var(--container-gutter) 4.8rem;
-}
-
-/* mobile stacks the composition: green plate, then the theater, then the actions */
-.stage {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.photo {
-  order: 2;
-  position: relative;
-  aspect-ratio: 1074 / 886;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 60% 50%;
-  }
-}
-
-.fade {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(5, 5, 5, 0.65) 0%,
-    rgba(5, 5, 5, 0.35) 38%,
-    var(--color-bg-alt) 94%
-  );
-}
-
-.glow,
-.decor,
-.square {
-  display: none;
-}
-
-/*
- * The hero is above the fold, so it plays on load instead of on scroll.
- * `both` fill matters: the elements must stay hidden until their delay elapses,
- * and hold their end state afterwards (that is also what keeps them visible when
- * prefers-reduced-motion collapses the duration to nothing).
- */
-@keyframes heroRise {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 2.4rem, 0);
-  }
 }
 
 @keyframes heroFade {
@@ -84,128 +46,41 @@
   }
 }
 
-@keyframes heroDecorFade {
+@keyframes heroRise {
   from {
     opacity: 0;
-  }
-  to {
-    opacity: 0.3;
+    transform: translate3d(0, 2.4rem, 0);
   }
 }
 
-@keyframes heroPop {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-}
-
-.photo,
-.fade {
+/*
+ * aspect-ratio matches the file that <picture> actually serves at this width, so the box is
+ * correct before the bytes land — no layout shift, and no object-fit crop of the artwork.
+ */
+.bannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 860 / 1390;
   animation: heroFade 1.2s var(--ease-out-soft) both;
 }
 
 /*
- * The plate is a scaled-down copy of the desktop composition: the shape stretches
- * (the SVG is preserveAspectRatio="none") and every child is placed in percentages of
- * it, so the layout survives any viewport. The box is deliberately taller than the
- * SVG's native 762.551x374.479 — the small type has a readable rem floor and needs
- * more vertical room than a pure proportional scale would give it.
+ * The buttons float over the banner, positioned in percentages of it so they keep their
+ * relationship to the baked-in green plate at every viewport width.
+ * Mobile: the lit facade offers no calm band between 36% and 70%, so the buttons sit low
+ * over the entrance cornice with ~8% bottom margin.
  */
-.plate {
-  order: 1;
-  position: relative;
-  z-index: 2;
-  container-type: inline-size;
-  aspect-ratio: 762.551 / 580;
-}
-
-.plateShape {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.date {
-  animation: heroRise 0.8s var(--ease-out-soft) 0.15s both;
-}
-
-.title {
-  animation: heroRise 0.9s var(--ease-out-soft) 0.25s both;
-}
-
-.tagline {
-  animation: heroRise 0.9s var(--ease-out-soft) 0.35s both;
-}
-
 .actions {
-  animation: heroRise 0.9s var(--ease-out-soft) 0.45s both;
-}
-
-.date {
   position: absolute;
-  left: 10.41%;
-  top: 16%;
-  display: flex;
-  align-items: center;
-  gap: 1.97em;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: var(--color-ink);
-}
-
-.year {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -1.4em;
-    width: 0.53em;
-    height: 0.53em;
-    border-radius: 50%;
-    background: currentColor;
-    transform: translateY(-50%);
-  }
-}
-
-.title {
-  position: absolute;
-  left: 10.41%;
-  top: 24%;
-  display: flex;
-  flex-direction: column;
-  /* sized against the plate, not the viewport, so it tracks the shape it sits on */
-  font-size: 10.5cqw;
-  font-weight: 600;
-  line-height: 0.97;
-  text-transform: uppercase;
-  color: var(--color-ink);
-}
-
-.tagline {
-  position: absolute;
-  left: 10.41%;
-  top: 58%;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: var(--color-ink);
-}
-
-.actions {
-  order: 3;
-  position: relative;
   z-index: 2;
+  left: var(--container-gutter);
+  right: var(--container-gutter);
+  top: 74%;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  animation: heroRise 0.9s var(--ease-out-soft) 0.35s both;
 }
 
 .buttonGhost,
@@ -235,8 +110,10 @@
   }
 }
 
+/* opaque, not --color-surface: this button now sits on top of the photo, and 40% grey over a
+   lit facade reads as a smudge */
 .buttonGhost {
-  background: var(--color-surface);
+  background: rgba(16, 16, 16, 0.88);
   color: #ffffff;
 }
 
@@ -249,200 +126,24 @@
 
 @media (min-width: 992px) {
   .hero {
-    display: flex;
-    align-items: flex-start;
-    /* stage top + stage height — the design frame is taller than its own content */
-    min-height: 96.3rem;
+    padding-top: 9.33rem;
 
     &::after {
-      display: block;
+      height: 16rem;
     }
   }
 
-  /* desktop places every child by hand, so the mobile stack is unwound */
-  .stage {
-    display: block;
+  .bannerImage {
+    aspect-ratio: 2400 / 1260;
   }
 
-  .canvas {
-    width: 140.8rem;
-    height: 96.3rem;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  /* the design drops the whole hero composition below the overlaid header */
-  .stage {
-    position: absolute;
-    left: 0;
-    top: 13.821rem;
-    width: 140.8rem;
-    height: 82.4rem;
-  }
-
-  .glow {
-    display: block;
-    position: absolute;
-    left: 77.5rem;
-    top: 35.41rem;
-    width: 194.266rem;
-    height: 122.495rem;
-    margin: -61.2475rem 0 0 -97.133rem;
-    background: url("/images/hero-glow.svg") center / 100% 100% no-repeat;
-    transform: rotate(8.84deg);
-    /* opacity-only keyframe, so the rotation above survives the animation */
-    animation: heroFade 1.6s var(--ease-out-soft) both;
-  }
-
-  .decor {
-    display: block;
-    position: absolute;
-    inset: 0;
-  }
-
-  .decorItem {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.3;
-    animation: heroDecorFade 1.4s var(--ease-out-soft) 0.3s both;
-
-    img {
-      transform: rotate(-45deg);
-    }
-  }
-
-  .photo {
-    position: absolute;
-    aspect-ratio: auto;
-    inset: auto;
-    left: 62.3rem;
-    top: -6.2rem;
-    width: 107.4rem;
-    height: 88.6rem;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      object-fit: fill;
-      /* the design crops the render inside its frame instead of scaling it to fit */
-      inset: auto;
-      left: -1.4%;
-      top: 6.17%;
-      max-width: none;
-      width: 103.69%;
-      height: 93.83%;
-    }
-  }
-
-  .fade {
-    display: block;
-    inset: auto;
-    left: -1.6rem;
-    top: 52.765rem;
-    width: 144rem;
-    height: 29.647rem;
-    background: linear-gradient(
-      180deg,
-      rgba(5, 5, 5, 0) 0%,
-      var(--color-bg-alt) 100%
-    );
-  }
-
-  .plate {
-    position: absolute;
-    container-type: normal;
-    aspect-ratio: auto;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .plateShape {
-    display: block;
-    position: absolute;
-    left: 6.871rem;
-    top: 8.029rem;
-    width: 76.2551rem;
-    height: 37.4479rem;
-    animation: heroFade 1s var(--ease-out-soft) both;
-  }
-
-  .square {
-    display: block;
-    position: absolute;
-    background: var(--color-surface);
-    animation: heroPop 0.7s var(--ease-out-soft) both;
-  }
-
-  .squareOne {
-    left: 6.871rem;
-    top: 2.382rem;
-    width: 5.6831rem;
-    height: 5.6831rem;
-    animation-delay: 0.5s;
-  }
-
-  .squareTwo {
-    left: 76.124rem;
-    top: 8.029rem;
-    width: 5.6831rem;
-    height: 5.6831rem;
-    animation-delay: 0.6s;
-  }
-
-  .squareThree {
-    left: 49.929rem;
-    top: 39.794rem;
-    width: 11.4441rem;
-    height: 5.722rem;
-    animation-delay: 0.7s;
-  }
-
-  .date {
-    position: absolute;
-    left: 14.812rem;
-    top: 9.879rem;
-    gap: 3.11rem;
-    font-size: 1.577rem;
-    color: var(--color-ink);
-  }
-
-  .year::before {
-    left: -2.21rem;
-  }
-
-  .title {
-    position: absolute;
-    left: 14.827rem;
-    top: 15.336rem;
-    margin: 0;
-    font-size: 8.7424rem;
-    line-height: 8.4775rem;
-    background: none;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    color: var(--color-ink);
-  }
-
-  .tagline {
-    position: absolute;
-    left: 14.827rem;
-    top: 35.032rem;
-    margin: 0;
-    font-size: 1.6rem;
-    color: var(--color-ink);
-  }
-
+  /* 10.5% = the left edge of the baked "CHERNIVTSI"; 70% clears the plate's lower square (65.7%) */
   .actions {
-    position: absolute;
-    left: 8.2rem;
-    top: 60.6rem;
+    left: 10.5%;
+    right: auto;
+    top: 70%;
     flex-direction: row;
     gap: 0;
-    margin: 0;
   }
 
   .buttonGhost {
