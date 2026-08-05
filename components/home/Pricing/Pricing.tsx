@@ -61,7 +61,11 @@ export function Pricing({ dateKey }: Props) {
               ))}
             </div>
           </ScrollArea>
+          <div className={styles.scrollFade} aria-hidden="true" />
         </div>
+        <p className={styles.scrollHint} aria-hidden="true">
+          гортай →
+        </p>
       </div>
     </section>
   );
