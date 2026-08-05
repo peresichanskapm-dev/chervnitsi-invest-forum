@@ -27,14 +27,17 @@
   flex-direction: column;
   gap: 4rem;
   margin-top: 4rem;
+  container-type: inline-size;
 }
 
 .title {
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
-  /* the mark sits inline with the wordmark, so both have to fit a 320px screen */
+  /* line 1 is the mark (0.4954em) + gap + "CHERNIVTSI" (6.2075em at wght 800), so this
+     divisor makes the wordmark span the container exactly */
   font-size: min(4rem, 8.5vw);
+  font-size: min(6.4rem, calc((100cqw - 1.6rem) / 6.75));
 }
 
 .mark {
