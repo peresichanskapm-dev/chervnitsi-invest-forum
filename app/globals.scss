@@ -32,7 +32,7 @@ html {
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; temporarily disabled — see mobile plan step 0/9 */
 }
 
 body {
@@ -118,6 +118,13 @@ svg {
 .has-reveal [data-reveal][data-reveal-visible] {
   opacity: 1;
   transform: none;
+}
+
+@media (max-width: 991px) {
+  .has-reveal [data-reveal="left"],
+  .has-reveal [data-reveal="right"] {
+    transform: translate3d(0, 3.2rem, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

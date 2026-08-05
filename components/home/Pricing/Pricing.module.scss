@@ -20,6 +20,11 @@
   align-items: center;
 }
 
+.tableBlock {
+  width: 100%;
+  min-width: 0;
+}
+
 .tableWrap {
   --brand-gradient-angle: 90deg;
 
