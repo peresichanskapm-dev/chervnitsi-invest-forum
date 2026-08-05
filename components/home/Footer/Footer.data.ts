@@ -6,7 +6,7 @@ export type FooterContact = {
 };
 
 export type FooterSocial = {
-  id: "instagram" | "facebook" | "telegram";
+  id: "instagram" | "facebook";
   label: string;
   href: string;
 };
@@ -23,7 +23,6 @@ export const footerData = {
   socials: [
     { id: "instagram", label: "Instagram", href: "#" },
     { id: "facebook", label: "Facebook", href: "#" },
-    { id: "telegram", label: "Telegram", href: "#" },
   ] satisfies FooterSocial[],
   copyright: "© 2026 Chernivtsi INVEST FORUM. All rights are reserved.",
   developedBy: {
