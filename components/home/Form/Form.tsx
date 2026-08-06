@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore, type CSSProperties, type FormEvent } from "react";
 import Image from "next/image";
 
+import { pushToDataLayer } from "@/lib/gtm";
 import { getLeadSource, getServerLeadSource, subscribeToLeadSource } from "@/lib/leadSource";
 import { isPhoneComplete } from "@/lib/phoneMask";
 import { usePhoneMask } from "@/lib/usePhoneMask";
@@ -71,6 +72,10 @@ export function Form() {
       return;
     }
 
+    const tracking = getTrackingForForm();
+    const formSource = leadSource.formSource || formData.formSource;
+    const ticketTitle = leadSource.ticketTitle ?? "";
+
     setIsSubmitting(true);
     try {
       const response = await fetch("/api/contact", {
@@ -80,9 +85,9 @@ export function Form() {
           name,
           email,
           phone,
-          ticketTitle: leadSource.ticketTitle ?? "",
-          formSource: leadSource.formSource || formData.formSource,
-          ...getTrackingForForm(),
+          ticketTitle,
+          formSource,
+          ...tracking,
         }),
       });
 
@@ -93,6 +98,14 @@ export function Form() {
       form.reset();
       phoneMask.reset();
       setSubmitState("success");
+
+      /* fires only once Telegram has accepted the lead, so a 502 never counts as a conversion */
+      pushToDataLayer({
+        event: "lead_submit",
+        form_source: formSource,
+        ticket_title: ticketTitle,
+        ...tracking,
+      });
     } catch {
       setSubmitState("error");
     } finally {
