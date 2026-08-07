@@ -52,5 +52,10 @@ export const speakersData = {
       lastName: "Куриш",
       photo: "/images/speakers/kurysh.webp",
     },
+    {
+      firstName: "Роман",
+      lastName: "Коржак",
+      photo: "/images/speakers/korzhak.webp",
+    },
   ],
 };
