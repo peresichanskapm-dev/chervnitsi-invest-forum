@@ -8,7 +8,6 @@ export type Stat = {
 export const statsData = {
   eyebrow: "Як це буде у цифрах",
   stats: [
-    { value: "500+", label: "учасників" },
     { value: "30+", label: "спікерів" },
     { value: "40+", label: "інвестиційних проєктів" },
   ] satisfies Stat[],
