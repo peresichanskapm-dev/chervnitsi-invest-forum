@@ -43,7 +43,10 @@ export function SpeakerModal({ speakers, index, onClose, onNavigate }: SpeakerMo
       body.style.left = "";
       body.style.right = "";
       body.style.width = "";
-      window.scrollTo(0, scrollY);
+      /* two-arg scrollTo still obeys `html`'s scroll-behavior: smooth — without
+         forcing "instant", React StrictMode's dev-only double-invoke re-captures
+         scrollY mid-animation (reads ~0) and the modal reopens/closes at the top */
+      window.scrollTo({ top: scrollY, left: 0, behavior: "instant" });
     };
   }, []);
 
