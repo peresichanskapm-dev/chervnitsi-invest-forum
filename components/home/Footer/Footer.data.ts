@@ -11,14 +11,42 @@ export type FooterSocial = {
   href: string;
 };
 
+export type FooterPartner = {
+  label: string;
+  name: string;
+  icon?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+};
+
 export const footerData = {
   logo: {
     top: "Chernivtsi",
     bottom: "INVEST FORUM",
-    href: "#hero",
+    href: "/#hero",
   },
   // contact blocks are intentionally empty — add entries here to bring them back
   contacts: [] as FooterContact[],
+  partners: [
+    {
+      label: "співорганізатор",
+      // the line break is deliberate — both partner names are set two lines
+      name: "Буковинський\nбізнес альянс",
+    },
+    {
+      label: "за підтримки",
+      name: "Чернівецької\nміської ради",
+      icon: {
+        src: "/images/chernivtsi-crest.webp",
+        alt: "Герб Чернівців",
+        width: 524,
+        height: 693,
+      },
+    },
+  ] satisfies FooterPartner[],
   socials: [
     {
       id: "instagram",
@@ -27,6 +55,10 @@ export const footerData = {
     },
   ] satisfies FooterSocial[],
   copyright: "© 2026 Chernivtsi INVEST FORUM. All rights are reserved.",
+  offer: {
+    label: "Публічна оферта",
+    href: "/oferta",
+  },
   developedBy: {
     label: "Developed and supported by vau.agency.",
     href: "https://vau.agency/",

@@ -1,0 +1,16 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding-top: 8rem;
+}
+
+@media (min-width: 992px) {
+  .main {
+    padding-top: 12rem;
+  }
+}

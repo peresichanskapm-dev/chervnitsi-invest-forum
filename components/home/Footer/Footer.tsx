@@ -16,7 +16,7 @@ const SOCIAL_ICONS: Record<FooterSocial["id"], React.ReactNode> = {
 };
 
 export function Footer() {
-  const { logo, contacts, socials, copyright, developedBy } = footerData;
+  const { logo, contacts, partners, socials, copyright, offer, developedBy } = footerData;
 
   return (
     <footer className={styles.footer}>
@@ -30,21 +30,49 @@ export function Footer() {
           </span>
         </a>
 
-        <div className={styles.contacts}>
-          {contacts.map((contact, index) => (
+        {contacts.length > 0 && (
+          <div className={styles.contacts}>
+            {contacts.map((contact, index) => (
+              <div
+                className={styles.contact}
+                key={contact.href}
+                data-reveal=""
+                style={
+                  { "--reveal-delay": `${index * 0.08}s` } as CSSProperties
+                }
+              >
+                <p className={styles.contactLabel}>{contact.label}</p>
+                <p className={styles.contactName}>{contact.name}</p>
+                <a className={styles.contactPhone} href={contact.href}>
+                  {contact.phone}
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className={styles.partners} data-reveal="">
+          {partners.map((partner, index) => (
             <div
-              className={styles.contact}
-              key={contact.href}
-              data-reveal=""
+              className={styles.partner}
+              key={partner.name}
               style={
                 { "--reveal-delay": `${index * 0.08}s` } as CSSProperties
               }
             >
-              <p className={styles.contactLabel}>{contact.label}</p>
-              <p className={styles.contactName}>{contact.name}</p>
-              <a className={styles.contactPhone} href={contact.href}>
-                {contact.phone}
-              </a>
+              <div className={styles.partnerText}>
+                <p className={styles.partnerLabel}>{partner.label}</p>
+                <p className={styles.partnerName}>{partner.name}</p>
+              </div>
+              {partner.icon && (
+                <Image
+                  className={styles.partnerIcon}
+                  src={partner.icon.src}
+                  alt={partner.icon.alt}
+                  width={partner.icon.width}
+                  height={partner.icon.height}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -69,6 +97,7 @@ export function Footer() {
 
       <div className={`container ${styles.bottom}`} data-reveal="fade">
         <p>{copyright}</p>
+        <a href={offer.href}>{offer.label}</a>
         <a href={developedBy.href} target="_blank" rel="noreferrer">
           {developedBy.label}
         </a>

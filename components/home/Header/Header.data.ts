@@ -7,13 +7,12 @@ export const headerData = {
   logo: {
     top: "Chernivtsi",
     bottom: "INVEST FORUM",
-    href: "#hero",
+    href: "/#hero",
   },
   nav: [
-    { label: "про подію", href: "#about" },
-    { label: "програма", href: "#program" },
-    { label: "спікери", href: "#speakers" },
-    { label: "квитки", href: "#tickets" },
-    { label: "графік підвищення цін", href: "#price-schedule" },
+    { label: "про подію", href: "/#about" },
+    { label: "спікери", href: "/#speakers" },
+    { label: "квитки", href: "/#tickets" },
+    { label: "графік підвищення цін", href: "/#pricing" },
   ] satisfies NavLink[],
 };

@@ -8,13 +8,14 @@
   flex-direction: column;
   align-items: center;
   gap: 3.2rem;
-  padding: 3.2rem 0;
+  /* padding-block, not the shorthand — the shorthand would wipe the container gutter */
+  padding-block: 3.2rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.8rem;
   padding: 0.6rem 0;
   margin: -0.6rem 0;
   font-size: 1.8rem;
@@ -22,7 +23,7 @@
   line-height: 1.1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-text);
   transition: opacity 0.2s ease;
 }
 
@@ -77,6 +78,47 @@
   opacity: 0.75;
 }
 
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.partnerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.partnerLabel {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: var(--brand-lime);
+}
+
+.partnerName {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-transform: uppercase;
+  white-space: pre-line;
+  color: #d0d4db;
+}
+
+.partnerIcon {
+  width: auto;
+  height: 4rem;
+  flex-shrink: 0;
+}
+
 .socials {
   display: flex;
   align-items: center;
@@ -90,7 +132,6 @@
   justify-content: center;
   width: 4.6rem;
   height: 4.6rem;
-  padding: 0.2rem;
   color: var(--brand-lime);
   transition:
     transform 0.25s var(--ease-out-soft),
@@ -108,16 +149,27 @@
 }
 
 .bottom {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  padding: 1.6rem 0;
-  border-top: 0.1rem solid #d2d2d2;
-  font-size: 1.6rem;
+  padding-block: 1.8rem;
+  font-size: 1.4rem;
   line-height: 1.3;
   text-align: center;
-  color: var(--color-text-muted);
+  color: #a8a8a8;
+
+  /* a pseudo-element, not border-top — a border would run the full padding box
+     and the rule has to stop at the container gutter */
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline: var(--container-gutter);
+    top: 0;
+    height: 0.1rem;
+    background: #d2d2d2;
+  }
 
   a {
     display: inline-block;
@@ -149,12 +201,23 @@
     text-align: left;
   }
 
-  .logo {
-    font-size: 2.2rem;
+  .partners {
+    flex-direction: row;
+    gap: 3.2rem;
   }
 
-  .logo img {
-    height: 4.4rem;
+  .partnerText {
+    text-align: left;
+  }
+
+  .logo {
+    font-size: 2rem;
+    line-height: 1.05;
+    letter-spacing: normal;
+  }
+
+  .partnerIcon {
+    height: 6.4rem;
   }
 
   /* theirs: while the row is tight the icons stack, so they never crowd the contacts */
@@ -171,8 +234,9 @@
 
 @media (min-width: 1200px) {
   .top {
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
+    padding-block: 3.8rem 3.6rem;
   }
 
   .contacts {
@@ -186,5 +250,25 @@
   .contactLabel {
     font-size: 1.6rem;
     letter-spacing: normal;
+  }
+
+  .partners {
+    gap: 16rem;
+  }
+
+  .partner {
+    gap: 3.4rem;
+  }
+
+  .partnerLabel {
+    font-size: 1.6rem;
+  }
+
+  .partnerName {
+    font-size: 1.7rem;
+  }
+
+  .partnerIcon {
+    height: 10rem;
   }
 }
