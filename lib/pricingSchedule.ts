@@ -2,10 +2,9 @@ export const PRICING_TIME_ZONE = "Europe/Kyiv";
 
 const NBSP = " ";
 
-export type TicketTierId = "expo" | "business" | "premium" | "vip";
+export type TicketTierId = "business" | "premium" | "vip";
 
 export const PRICING_COLUMNS: ReadonlyArray<{ tierId: TicketTierId; label: string }> = [
-  { tierId: "expo", label: "EXPO" },
   { tierId: "business", label: "BUSINESS" },
   { tierId: "premium", label: "PREMIUM" },
   { tierId: "vip", label: "VIP" },
@@ -27,42 +26,42 @@ const PRICING_PHASES: ReadonlyArray<PricingPhase> = [
     phase: "Early Birds",
     startDate: null,
     date: "- 09.08.26",
-    prices: { expo: 490, business: 4900, premium: 9900, vip: 18500 },
+    prices: { business: 4900, premium: 9900, vip: 18500 },
   },
   {
     id: "first-price",
     phase: "First Price",
     startDate: "2026-08-10",
     date: "10.08.26 - 23.08.26",
-    prices: { expo: 790, business: 5900, premium: 12900, vip: 21900 },
+    prices: { business: 5900, premium: 12900, vip: 21900 },
   },
   {
     id: "main-price",
     phase: "Main Price",
     startDate: "2026-08-24",
     date: "24.08.26 - 06.09.26",
-    prices: { expo: 990, business: 6900, premium: 16900, vip: 26900 },
+    prices: { business: 6900, premium: 16900, vip: 26900 },
   },
   {
     id: "lazy-owls",
     phase: "Lazy Owls",
     startDate: "2026-09-07",
     date: "07.09.26 - 20.09.26",
-    prices: { expo: 1190, business: 7900, premium: 18900, vip: 36900 },
+    prices: { business: 7900, premium: 18900, vip: 36900 },
   },
   {
     id: "last-chance",
     phase: "Last Chance",
     startDate: "2026-09-21",
     date: "21.09.26 - 02.10.26",
-    prices: { expo: 1390, business: 8900, premium: 20400, vip: 39900 },
+    prices: { business: 8900, premium: 20400, vip: 39900 },
   },
   {
     id: "event-price",
     phase: "Event Price",
     startDate: "2026-10-03",
     date: "03.10.2026",
-    prices: { expo: 1600, business: 9900, premium: 21900, vip: 42700 },
+    prices: { business: 9900, premium: 21900, vip: 42700 },
   },
 ];
 
