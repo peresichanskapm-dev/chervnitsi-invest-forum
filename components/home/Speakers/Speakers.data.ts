@@ -48,6 +48,12 @@ export const speakersData = {
         "Інвест-директор та співзасновник MergeWave Capital, Bk invest. Інвестиційний радник понад 40 компаній України (Edem resort, МХП та ін.) та Європи. Понад 80+ інвестиційних та M&A угод. Викладач кількох MBA-шкіл (бізнес-школа УКУ, Львівська школа керівників бізнесу, IT Business school та інші) на тему злиття та поглинання, ментор Board й модератор інвест-комітету YBC.",
     },
     {
+      firstName: "Роман",
+      lastName: "Коржак",
+      photo: "/images/speakers/korzhak.webp",
+      description: "СЕО компанії Blago.",
+    },
+    {
       firstName: "Артур",
       lastName: "Лупашко",
       photo: "/images/speakers/lupashko.webp",
@@ -68,12 +74,6 @@ export const speakersData = {
         "Засновниця та CEO освітньої екосистеми CLA (Communicative Language Academy) і CLA Communicative HUB — консалтингу зі стратегічних міжнародних комунікацій для українських tech- та miltech-компаній, що виходять на міжнародні ринки. PhD. Входить до борду правління Чернівецького представництва Національної платформи «Жінки в Бізнесі», засновниця ГО «Об'єднані задля України» та співініціаторка створення Буковинського бізнес-альянсу. Випускниця програми IVLP Держдепартаменту США, має досвід міжнародного партнерського розвитку на ринках США та ЄС.",
     },
     {
-      firstName: "Роман",
-      lastName: "Коржак",
-      photo: "/images/speakers/korzhak.webp",
-      description: "СЕО компанії Blago.",
-    },
-    {
       firstName: "Ростислав",
       lastName: "Вовк",
       photo: "/images/speakers/vovk-v2.webp",
@@ -86,6 +86,26 @@ export const speakersData = {
       photo: "/images/speakers/shkilniuk.webp",
       description:
         "CEO Чернівецького ІТ Кластеру. Керівник центру розробки компанії Valtech у місті Чернівці. Доцент кафедри математичного моделювання Чернівецького національного університету. Кандидат технічних наук.",
+    },
+    {
+      firstName: "Василь",
+      lastName: "Яворський",
+      photo: "/images/speakers/yavorskyi.webp",
+      description: "Співзасновник та СЕО Bacara. Співзасновник CBG.",
+    },
+    {
+      firstName: "Дмитро",
+      lastName: "Карпіловський",
+      photo: "/images/speakers/karpilovskyi.webp",
+      description:
+        "Професійний full-time інвестор із 23 роками практики, експерт по дохідній нерухомості, співзасновник найбільшої інвест-спільноти України — УкрІнвестКлуб. Інвестор року 2024. Головний мультиінвестор України 2025. Портфель: 50+ активів у 6 країнах. Залучив $270+ млн інвестицій в українські проєкти.",
+    },
+    {
+      firstName: "Микола",
+      lastName: "Кміть",
+      photo: "/images/speakers/kmit-v2.webp",
+      description:
+        "Співзасновник готельно-оздоровчого комплексу «Святий Шарбель». Співвласник гірськолижного комплексу «Плай».",
     },
   ] satisfies Speaker[],
 };

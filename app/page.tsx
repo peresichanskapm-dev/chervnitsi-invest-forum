@@ -6,6 +6,7 @@ import { Header } from "@/components/home/Header/Header";
 import { Hero } from "@/components/home/Hero/Hero";
 import { Partnership } from "@/components/home/Partnership/Partnership";
 import { Pricing } from "@/components/home/Pricing/Pricing";
+import { Program } from "@/components/home/Program/Program";
 import { Speakers } from "@/components/home/Speakers/Speakers";
 import { Stats } from "@/components/home/Stats/Stats";
 import { Tickets } from "@/components/home/Tickets/Tickets";
@@ -27,6 +28,7 @@ export default function Home() {
         <Speakers />
         <Partnership />
         <Tickets dateKey={dateKey} />
+        <Program />
         <Pricing dateKey={dateKey} />
         <GeneralPartner />
         <Form />

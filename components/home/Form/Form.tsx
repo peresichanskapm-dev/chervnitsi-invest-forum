@@ -106,6 +106,11 @@ export function Form() {
         ticket_title: ticketTitle,
         ...tracking,
       });
+
+      /* brief pause so the visitor sees the success message before leaving the site */
+      window.setTimeout(() => {
+        window.location.href = formData.ticketCheckoutUrl;
+      }, 1200);
     } catch {
       setSubmitState("error");
     } finally {

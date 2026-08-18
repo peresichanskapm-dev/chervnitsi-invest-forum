@@ -1,0 +1,221 @@
+.section {
+  position: relative;
+  padding: 6.4rem 0;
+  background: var(--color-bg);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tab {
+  --brand-gradient-angle: 138deg;
+
+  padding: 2rem 2.1rem 1.6rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 0.95;
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: opacity 0.2s var(--ease-out-soft);
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.tabActive {
+  --brand-gradient-angle: 154deg;
+
+  background: var(--brand-gradient);
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  color: var(--color-ink);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero,
+.cardMedia,
+.featureMedia {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-alt);
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.hero {
+  aspect-ratio: 16 / 9;
+}
+
+.intro {
+  padding: 2.4rem 0 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.feature,
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2.4rem 0;
+}
+
+.featureBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.cardHeading {
+  --brand-gradient-angle: 168deg;
+
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.cardNumber,
+.cardTitle {
+  font: inherit;
+}
+
+.featureMedia,
+.cardMedia {
+  aspect-ratio: 16 / 9;
+}
+
+.cardText {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.grid {
+  display: grid;
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 10rem 0;
+  }
+
+  .tab {
+    padding: 3.2rem 2.1rem 2.4rem;
+    font-size: 3.8rem;
+    text-align: center;
+  }
+
+  .hero {
+    aspect-ratio: 1208 / 360;
+  }
+
+  .intro {
+    padding: 2.4rem 3.6rem 3.6rem;
+    font-size: 2rem;
+  }
+
+  .feature {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 2.4rem;
+  }
+
+  .featureMedia {
+    flex: none;
+    width: 50rem;
+    aspect-ratio: auto;
+  }
+
+  .featureBody {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .grid {
+    &[data-columns="2"] {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &[data-columns="3"] {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
+    padding: 2.4rem;
+  }
+
+  /* the design frames every row and column of the L-shape with the same hairline */
+  .feature,
+  .card {
+    border-inline: 1px solid #30586c;
+  }
+
+  .cardHeading {
+    min-height: 5.6rem;
+    font-size: 2rem;
+  }
+
+  .cardMedia {
+    aspect-ratio: auto;
+    height: 12rem;
+  }
+
+  .grid[data-columns="2"] .cardMedia {
+    height: 36rem;
+  }
+
+  .cardText {
+    font-size: 1.6rem;
+  }
+}

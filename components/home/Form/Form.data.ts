@@ -19,7 +19,8 @@ export const formData = {
     phoneRequired: "Вкажіть номер телефону",
     phoneIncomplete: "Номер телефону неповний",
   },
-  submitSuccess: "Дякуємо! Ми зв’яжемось з вами найближчим часом.",
+  submitSuccess: "Дякуємо! Перенаправляємо вас на сторінку оплати квитка…",
   submitError: "Не вдалося надіслати заявку. Спробуйте ще раз.",
   formSource: "Форма на основному сайті",
+  ticketCheckoutUrl: "https://ticketsbox.com/checkout/2497451e57b78656d7b79e79ee21775ad621676f",
 };
