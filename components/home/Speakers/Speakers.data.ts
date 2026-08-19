@@ -107,5 +107,12 @@ export const speakersData = {
       description:
         "Співзасновник готельно-оздоровчого комплексу «Святий Шарбель». Співвласник гірськолижного комплексу «Плай».",
     },
+    {
+      firstName: "Дмитро",
+      lastName: "Ковальчук",
+      photo: "/images/speakers/kovalchuk.webp",
+      description:
+        "Founder & CEO інвестиційно-девелоперської компанії Alterra Group. Має інженерну й економічну освіти, пройшов програму Presidents' MBA в Києво-Могилянській бізнес-школі.",
+    },
   ] satisfies Speaker[],
 };
