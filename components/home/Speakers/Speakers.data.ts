@@ -103,7 +103,7 @@ export const speakersData = {
     {
       firstName: "Микола",
       lastName: "Кміть",
-      photo: "/images/speakers/kmit-v2.webp",
+      photo: "/images/speakers/kmit-v3.webp",
       description:
         "Співзасновник готельно-оздоровчого комплексу «Святий Шарбель». Співвласник гірськолижного комплексу «Плай».",
     },
