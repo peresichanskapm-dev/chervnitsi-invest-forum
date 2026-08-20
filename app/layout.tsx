@@ -12,7 +12,8 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const GTM_ID = "GTM-NDD3NWHF";
+const GTM_ID = "GTM-NTZ5VPTD";
+const GA_ID = "G-Z7L2JL1PH3";
 
 export const metadata: Metadata = {
   title: "Chernivtsi Invest Forum — 3-4 жовтня 2026",
@@ -45,6 +46,16 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
         </Script>
       </head>
       <body>
