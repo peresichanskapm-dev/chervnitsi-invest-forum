@@ -1,4 +1,6 @@
 import { About } from "@/components/home/About/About";
+import { AutoPartner } from "@/components/home/AutoPartner/AutoPartner";
+import { EventPartner } from "@/components/home/EventPartner/EventPartner";
 import { Footer } from "@/components/home/Footer/Footer";
 import { Form } from "@/components/home/Form/Form";
 import { GeneralPartner } from "@/components/home/GeneralPartner/GeneralPartner";
@@ -8,6 +10,7 @@ import { Partnership } from "@/components/home/Partnership/Partnership";
 import { Pricing } from "@/components/home/Pricing/Pricing";
 import { Program } from "@/components/home/Program/Program";
 import { Speakers } from "@/components/home/Speakers/Speakers";
+import { SpeakersBanner } from "@/components/home/SpeakersBanner/SpeakersBanner";
 import { Stats } from "@/components/home/Stats/Stats";
 import { Tickets } from "@/components/home/Tickets/Tickets";
 import { getPricingDateKey } from "@/lib/pricingSchedule";
@@ -26,11 +29,14 @@ export default function Home() {
         <About />
         <Stats />
         <Speakers />
+        <SpeakersBanner />
         <Partnership />
         <Tickets dateKey={dateKey} />
         <Program />
         <Pricing dateKey={dateKey} />
         <GeneralPartner />
+        <EventPartner />
+        <AutoPartner />
         <Form />
       </main>
       <Footer />

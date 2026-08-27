@@ -1,0 +1,138 @@
+.section {
+  padding: 0 0 4.8rem;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2.4rem;
+  border-radius: 1.6rem;
+  background: #0e0e0e;
+  box-shadow: 0 0.4rem 7rem rgba(192, 246, 3, 0.3);
+  text-align: center;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.count {
+  --brand-gradient-angle: 123deg;
+
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.art {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 23.6rem;
+    padding: 0 8rem;
+    border-radius: 2rem;
+    text-align: left;
+  }
+
+  .text {
+    position: relative;
+    z-index: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .labels {
+    gap: 0;
+  }
+
+  .label {
+    font-size: 6rem;
+  }
+
+  .count {
+    font-size: 12rem;
+  }
+
+  .art {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .shape1,
+  .shape2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transform: rotate(133.25deg) skewX(-3.49deg);
+    }
+  }
+
+  .shape1 {
+    left: 66.3rem;
+    top: -4.4rem;
+    width: 30.2rem;
+    height: 32.1rem;
+
+    img {
+      width: 21.8938rem;
+      height: 22.1794rem;
+    }
+  }
+
+  .shape2 {
+    left: 84.896rem;
+    top: 3.46rem;
+    width: 22.8044rem;
+    height: 24.2391rem;
+
+    img {
+      width: 11.1018rem;
+      height: 22.1784rem;
+    }
+  }
+}

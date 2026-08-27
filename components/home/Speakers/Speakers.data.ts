@@ -135,11 +135,5 @@ export const speakersData = {
       description:
         "Співвласник та керуючий партнер YOD Group — компанії, що більше 20 років створює дизайн для ресторанів та готелів в Україні та за кордоном. Більше 200 реалізованих проєктів, 30 міжнародних відзнак. Buddha Bar New-York включений до топ-100 найкрасивіших ресторанів світу за рейтингом Grands Prix du Design від UNESCO. Проєкти у галузі рекреації: Hay Boutique Hotel and SPA by Edem Family, Mountain Residence, Emily Resort, Verholy Relax Park.",
     },
-    {
-      firstName: "Андрій",
-      lastName: "Журжій",
-      photo: "/images/speakers/zhurzhii.webp",
-      description: "Засновник та СЕО Inzhur. Інвестор, підприємець, юрист.",
-    },
   ] satisfies Speaker[],
 };
