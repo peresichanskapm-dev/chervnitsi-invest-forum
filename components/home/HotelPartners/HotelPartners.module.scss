@@ -1,0 +1,139 @@
+.section {
+  padding: 4.8rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+.eyebrow {
+  --brand-gradient-angle: 173deg;
+
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.title {
+  margin-top: 0.8rem;
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+  list-style: none;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 3.2rem 2.4rem;
+  border: 0.1rem solid var(--brand-lime);
+  border-radius: 0.8rem;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.name {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.discount {
+  --brand-gradient-angle: 165deg;
+
+  font-size: 3.2rem;
+  font-weight: 600;
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.booking {
+  max-width: 48rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.7;
+  }
+}
+
+.promo {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.promoValue {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--brand-lime);
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 6.4rem 0;
+  }
+
+  .title {
+    margin-top: 1.2rem;
+    font-size: 3.8rem;
+  }
+
+  .panels {
+    margin-top: 4.8rem;
+  }
+
+  .panel {
+    padding: 4rem 5.6rem;
+  }
+
+  .name {
+    font-size: 2.6rem;
+  }
+
+  .discount {
+    font-size: 4rem;
+  }
+
+  .booking {
+    font-size: 1.6rem;
+  }
+
+  .promo {
+    font-size: 1.6rem;
+  }
+}
