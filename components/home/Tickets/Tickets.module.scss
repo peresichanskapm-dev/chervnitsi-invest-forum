@@ -144,25 +144,58 @@
   background: #a8a8a8;
 }
 
+.description {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #ffffff;
+}
+
 .list {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  padding-left: 1.6rem;
   font-size: 1.6rem;
   line-height: 1.4;
-  list-style-type: disc;
+  list-style: none;
 }
 
 .listItem,
 .listItemStrong {
+  position: relative;
+  padding-left: 1.6rem;
   font-size: 1.6rem;
-  list-style: disc;
   color: #e5faff;
+
+  &::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
 }
 
 .listItemStrong {
   font-weight: 700;
+}
+
+.listItemNoMarker {
+  padding-left: 0;
+
+  &::before {
+    content: none;
+  }
+}
+
+.listItemCross {
+  padding-left: 1.8rem;
+
+  &::before {
+    content: "✕";
+    left: 0.1rem;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
 }
 
 .toggle {

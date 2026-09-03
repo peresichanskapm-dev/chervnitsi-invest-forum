@@ -59,15 +59,20 @@ function TicketCard({ ticket, expandLabel, collapseLabel, index }: CardProps) {
 
       <div className={styles.divider} />
 
+      <p className={styles.description}>{ticket.description}</p>
+
       <ul className={styles.list}>
-        {visibleFeatures.map((feature) => (
-          <li
-            key={feature.text}
-            className={feature.strong ? styles.listItemStrong : styles.listItem}
-          >
-            {feature.text}
-          </li>
-        ))}
+        {visibleFeatures.map((feature) => {
+          const classNames = [feature.strong ? styles.listItemStrong : styles.listItem];
+          if (feature.marker === "none") classNames.push(styles.listItemNoMarker);
+          if (feature.marker === "cross") classNames.push(styles.listItemCross);
+
+          return (
+            <li key={feature.text} className={classNames.join(" ")}>
+              {feature.text}
+            </li>
+          );
+        })}
       </ul>
 
       {isTruncated && (
