@@ -25,16 +25,23 @@
   justify-content: center;
   width: 100%;
   min-height: 16rem;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
   border: 0.05rem solid var(--brand-lime);
   background: var(--color-surface);
+  transition: opacity 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  opacity: 0.8;
 }
 
 .logo {
   display: block;
   width: auto;
   max-width: 100%;
-  height: 12rem;
+  height: auto;
+  max-height: 10rem;
   object-fit: contain;
 }
 
@@ -50,10 +57,10 @@
 
   .card {
     min-height: 22rem;
-    padding: 1rem 4.6rem;
+    padding: 4rem 4.6rem;
   }
 
   .logo {
-    height: 17rem;
+    max-height: 14rem;
   }
 }

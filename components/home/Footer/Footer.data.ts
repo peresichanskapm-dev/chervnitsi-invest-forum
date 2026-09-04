@@ -46,6 +46,16 @@ export const footerData = {
         height: 693,
       },
     },
+    {
+      label: "за підтримки",
+      name: "Чернівецької\nОВА",
+      icon: {
+        src: "/images/chernivtsi-oblast-crest.webp",
+        alt: "Герб Чернівецької області",
+        width: 1280,
+        height: 1405,
+      },
+    },
   ] satisfies FooterPartner[],
   socials: [
     {

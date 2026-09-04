@@ -24,7 +24,7 @@ export const hotelPartnersData = {
     {
       id: "grand-royal",
       name: "Готель Grand Royal",
-      logo: { src: "/images/partners-grand-royal.webp", width: 1589, height: 1793, scale: 1.75 },
+      logo: { src: "/images/partners-grand-royal-v2.webp", width: 530, height: 598, scale: 1.75 },
       discount: "-15%",
       bookingLabel: "Забронювати номер зі знижкою -15% можна за номером телефону, вказаним на сайті",
       website: { display: "grand.cv.ua", href: "https://grand.cv.ua/" },
