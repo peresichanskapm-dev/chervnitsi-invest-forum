@@ -44,5 +44,11 @@ export const eventPartnerData = {
       width: 2031,
       height: 1863,
     },
+    {
+      src: "/images/partners-mainz.webp",
+      alt: "Mainz Dental Clinic",
+      width: 1200,
+      height: 1243,
+    },
   ],
 };

@@ -9,6 +9,7 @@ import { Hero } from "@/components/home/Hero/Hero";
 import { HotelPartners } from "@/components/home/HotelPartners/HotelPartners";
 import { InvestExpo } from "@/components/home/InvestExpo/InvestExpo";
 import { MediaPartner } from "@/components/home/MediaPartner/MediaPartner";
+import { MediaPartners } from "@/components/home/MediaPartners/MediaPartners";
 import { Partnership } from "@/components/home/Partnership/Partnership";
 import { Pricing } from "@/components/home/Pricing/Pricing";
 import { Program } from "@/components/home/Program/Program";
@@ -17,6 +18,7 @@ import { Speakers } from "@/components/home/Speakers/Speakers";
 import { SpeakersBanner } from "@/components/home/SpeakersBanner/SpeakersBanner";
 import { Stats } from "@/components/home/Stats/Stats";
 import { Tickets } from "@/components/home/Tickets/Tickets";
+import { TitlePartner } from "@/components/home/TitlePartner/TitlePartner";
 import { getPricingDateKey } from "@/lib/pricingSchedule";
 
 /** the page is static, so without this the active pricing phase would freeze at build time */
@@ -39,10 +41,12 @@ export default function Home() {
         <Program />
         <Pricing dateKey={dateKey} />
         <GeneralPartner />
+        <TitlePartner />
         <EventPartner />
         <AutoPartner />
         <MediaPartner />
         <InvestExpo />
+        <MediaPartners />
         <HotelPartners />
         <Form />
       </main>
