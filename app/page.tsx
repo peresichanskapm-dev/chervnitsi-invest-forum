@@ -12,6 +12,7 @@ import { MediaPartner } from "@/components/home/MediaPartner/MediaPartner";
 import { Partnership } from "@/components/home/Partnership/Partnership";
 import { Pricing } from "@/components/home/Pricing/Pricing";
 import { Program } from "@/components/home/Program/Program";
+import { ReminderPopup } from "@/components/home/ReminderPopup/ReminderPopup";
 import { Speakers } from "@/components/home/Speakers/Speakers";
 import { SpeakersBanner } from "@/components/home/SpeakersBanner/SpeakersBanner";
 import { Stats } from "@/components/home/Stats/Stats";
@@ -46,6 +47,7 @@ export default function Home() {
         <Form />
       </main>
       <Footer />
+      <ReminderPopup />
     </>
   );
 }
