@@ -9,12 +9,7 @@ import { usePhoneMask } from "@/lib/usePhoneMask";
 import { getTrackingForForm } from "@/lib/utm";
 
 import { formData } from "../Form/Form.data";
-import {
-  REMINDER_RING,
-  reminderClusters,
-  reminderPopupData,
-  reminderSlabs,
-} from "./ReminderPopup.data";
+import { REMINDER_RING, reminderClusters, reminderPopupData } from "./ReminderPopup.data";
 import styles from "./ReminderPopup.module.scss";
 
 type FieldName = "name" | "phone";
@@ -25,6 +20,9 @@ const NAME_PATTERN = /^[\p{L}\p{M}][\p{L}\p{M}'’\- ]*$/u;
 const SEEN_KEY = "cif:reminder-popup-seen";
 
 const px = (value: number) => `${value / 10}rem`;
+
+const { title } = reminderPopupData;
+const TITLE_TEXT = [...title.lines, `${title.lastLine}${title.lastLineAccent}`].join(" ");
 
 function wasSeen(): boolean {
   try {
@@ -205,29 +203,13 @@ export function ReminderPopup() {
               />
             )),
           )}
-
-          {reminderSlabs.map((slab, index) => (
-            <span
-              key={`s${index}`}
-              className={styles.slab}
-              style={
-                {
-                  "--decor-index": index,
-                  left: px(slab.left),
-                  top: px(slab.top),
-                  width: px(slab.width),
-                  height: px(slab.height),
-                } as CSSProperties
-              }
-            />
-          ))}
         </div>
 
         <div
           className={styles.card}
           role="dialog"
           aria-modal="true"
-          aria-label={reminderPopupData.title}
+          aria-label={TITLE_TEXT}
           onClick={(event) => event.stopPropagation()}
         >
           <button
@@ -240,36 +222,48 @@ export function ReminderPopup() {
             <span />
           </button>
 
-          <h2 className={styles.title}>{reminderPopupData.title}</h2>
+          <h2 className={styles.title}>
+            {title.lines.map((line) => (
+              <span key={line} className={styles.titleLine}>
+                {line}
+              </span>
+            ))}
+            <span className={styles.titleLine}>
+              {title.lastLine}
+              <span className={styles.titleAccent}>{title.lastLineAccent}</span>
+            </span>
+          </h2>
           <p className={styles.subtitle}>{reminderPopupData.subtitle}</p>
           <span className={styles.divider} aria-hidden />
 
-          <form className={styles.fields} onSubmit={onSubmit} noValidate>
-            <div className={styles.field}>
-              <input
-                name="name"
-                type="text"
-                className={styles.input}
-                placeholder={formData.placeholders.name}
-                autoComplete="name"
-                aria-label={formData.placeholders.name}
-                aria-invalid={errors.name ? "true" : "false"}
-              />
-              {errors.name && <p className={styles.error}>{errors.name}</p>}
-            </div>
+          <form className={styles.form} onSubmit={onSubmit} noValidate>
+            <div className={styles.fields}>
+              <div className={styles.field}>
+                <input
+                  name="name"
+                  type="text"
+                  className={styles.input}
+                  placeholder={formData.placeholders.name}
+                  autoComplete="name"
+                  aria-label={formData.placeholders.name}
+                  aria-invalid={errors.name ? "true" : "false"}
+                />
+                {errors.name && <p className={styles.error}>{errors.name}</p>}
+              </div>
 
-            <div className={styles.field}>
-              <input
-                name="phone"
-                type="tel"
-                inputMode="numeric"
-                autoComplete="tel"
-                className={styles.input}
-                aria-label="Телефон"
-                aria-invalid={errors.phone ? "true" : "false"}
-                {...phoneMask.bind}
-              />
-              {errors.phone && <p className={styles.error}>{errors.phone}</p>}
+              <div className={styles.field}>
+                <input
+                  name="phone"
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel"
+                  className={styles.input}
+                  aria-label="Телефон"
+                  aria-invalid={errors.phone ? "true" : "false"}
+                  {...phoneMask.bind}
+                />
+                {errors.phone && <p className={styles.error}>{errors.phone}</p>}
+              </div>
             </div>
 
             <button className={styles.submit} type="submit" disabled={isSubmitting}>
