@@ -1,5 +1,5 @@
 export const titlePartnerData = {
-  label: "Титульний партнер",
+  label: "Інвест партнер",
   logo: {
     src: "/images/partners-afa.svg",
     alt: "AFA — Advance Finance Alliance",

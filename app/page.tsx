@@ -8,7 +8,6 @@ import { Header } from "@/components/home/Header/Header";
 import { Hero } from "@/components/home/Hero/Hero";
 import { HotelPartners } from "@/components/home/HotelPartners/HotelPartners";
 import { InvestExpo } from "@/components/home/InvestExpo/InvestExpo";
-import { MediaPartner } from "@/components/home/MediaPartner/MediaPartner";
 import { MediaPartners } from "@/components/home/MediaPartners/MediaPartners";
 import { Partnership } from "@/components/home/Partnership/Partnership";
 import { Pricing } from "@/components/home/Pricing/Pricing";
@@ -44,7 +43,6 @@ export default function Home() {
         <TitlePartner />
         <EventPartner />
         <AutoPartner />
-        <MediaPartner />
         <InvestExpo />
         <MediaPartners />
         <HotelPartners />

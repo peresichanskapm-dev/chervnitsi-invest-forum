@@ -35,6 +35,20 @@
   border: 0.05rem solid var(--brand-lime);
 }
 
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  opacity: 0.8;
+}
+
 .logo {
   display: block;
   width: auto;

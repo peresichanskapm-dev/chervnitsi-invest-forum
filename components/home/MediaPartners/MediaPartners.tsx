@@ -14,8 +14,8 @@ export function MediaPartners() {
         </p>
 
         <ul className={styles.grid}>
-          {logos.map((logo, index) => (
-            <li key={`${logo.alt}-${index}`} className={styles.card} data-reveal="zoom">
+          {logos.map((logo, index) => {
+            const image = (
               <Image
                 className={styles.logo}
                 src={logo.src}
@@ -23,8 +23,20 @@ export function MediaPartners() {
                 width={logo.width}
                 height={logo.height}
               />
-            </li>
-          ))}
+            );
+
+            return (
+              <li key={`${logo.alt}-${index}`} className={styles.card} data-reveal="zoom">
+                {logo.href ? (
+                  <a className={styles.link} href={logo.href} target="_blank" rel="noreferrer noopener">
+                    {image}
+                  </a>
+                ) : (
+                  image
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

@@ -50,5 +50,11 @@ export const eventPartnerData = {
       width: 1200,
       height: 1243,
     },
+    {
+      src: "/images/partners-hetman.svg",
+      alt: "Hetman — перша елітна горілка країни",
+      width: 333,
+      height: 248,
+    },
   ],
 };
