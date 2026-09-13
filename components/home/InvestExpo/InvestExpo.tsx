@@ -16,13 +16,25 @@ export function InvestExpo() {
         <ul className={styles.grid}>
           {logos.map((logo, index) => (
             <li key={`${logo.alt}-${index}`} className={styles.card} data-reveal="zoom">
-              <Image
-                className={styles.logo}
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-              />
+              {logo.href ? (
+                <a href={logo.href} target="_blank" rel="noreferrer noopener" className={styles.link}>
+                  <Image
+                    className={styles.logo}
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width}
+                    height={logo.height}
+                  />
+                </a>
+              ) : (
+                <Image
+                  className={styles.logo}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                />
+              )}
             </li>
           ))}
         </ul>

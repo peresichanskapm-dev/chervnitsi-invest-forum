@@ -11,6 +11,7 @@ export const headerData = {
   },
   nav: [
     { label: "про подію", href: "/#about" },
+    { label: "програма", href: "/program" },
     { label: "спікери", href: "/#speakers" },
     { label: "квитки", href: "/#tickets" },
     { label: "графік підвищення цін", href: "/#pricing" },

@@ -1,3 +1,11 @@
+export type InvestExpoLogo = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  href?: string;
+};
+
 export const investExpoData = {
   label: "Invest Expo",
   logos: [
@@ -13,5 +21,12 @@ export const investExpoData = {
       width: 3416,
       height: 3415,
     },
-  ],
+    {
+      src: "/images/partners-kodra-invest.webp",
+      alt: "KODRA Invest",
+      width: 1443,
+      height: 2256,
+      href: "https://www.kodrahouse.com/",
+    },
+  ] satisfies InvestExpoLogo[],
 };

@@ -10,8 +10,10 @@ import { HotelPartners } from "@/components/home/HotelPartners/HotelPartners";
 import { InvestExpo } from "@/components/home/InvestExpo/InvestExpo";
 import { MediaPartners } from "@/components/home/MediaPartners/MediaPartners";
 import { Partnership } from "@/components/home/Partnership/Partnership";
+import { PremiumPartner } from "@/components/home/PremiumPartner/PremiumPartner";
 import { Pricing } from "@/components/home/Pricing/Pricing";
 import { Program } from "@/components/home/Program/Program";
+import { ProgramBanner } from "@/components/home/ProgramBanner/ProgramBanner";
 import { ReminderPopup } from "@/components/home/ReminderPopup/ReminderPopup";
 import { Speakers } from "@/components/home/Speakers/Speakers";
 import { SpeakersBanner } from "@/components/home/SpeakersBanner/SpeakersBanner";
@@ -38,9 +40,11 @@ export default function Home() {
         <Partnership />
         <Tickets dateKey={dateKey} />
         <Program />
+        <ProgramBanner />
         <Pricing dateKey={dateKey} />
         <GeneralPartner />
         <TitlePartner />
+        <PremiumPartner />
         <EventPartner />
         <AutoPartner />
         <InvestExpo />
