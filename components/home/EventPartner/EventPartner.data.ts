@@ -56,5 +56,11 @@ export const eventPartnerData = {
       width: 333,
       height: 248,
     },
+    {
+      src: "/images/partners-forma-hub.webp",
+      alt: "Forma Hub — хаб виробників косметики",
+      width: 2028,
+      height: 2180,
+    },
   ],
 };

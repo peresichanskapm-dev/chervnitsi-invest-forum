@@ -20,17 +20,8 @@ export function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.top}`}>
-        <a href={logo.href} className={styles.logo} data-reveal="left">
-          <Image src="/images/logo-mark.svg" alt="" width={25} height={38} />
-          <span>
-            {logo.top}
-            <br />
-            {logo.bottom}
-          </span>
-        </a>
-
-        {contacts.length > 0 && (
+      {contacts.length > 0 && (
+        <div className={`container ${styles.contactsRow}`}>
           <div className={styles.contacts}>
             {contacts.map((contact, index) => (
               <div
@@ -49,7 +40,18 @@ export function Footer() {
               </div>
             ))}
           </div>
-        )}
+        </div>
+      )}
+
+      <div className={`container ${styles.top}`}>
+        <a href={logo.href} className={styles.logo} data-reveal="left">
+          <Image src="/images/logo-mark.svg" alt="" width={25} height={38} />
+          <span>
+            {logo.top}
+            <br />
+            {logo.bottom}
+          </span>
+        </a>
 
         <div className={styles.partners} data-reveal="">
           {partners.map((partner, index) => (

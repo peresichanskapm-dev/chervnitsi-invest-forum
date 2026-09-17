@@ -28,8 +28,26 @@ export const footerData = {
     bottom: "INVEST FORUM",
     href: "/#hero",
   },
-  // contact blocks are intentionally empty — add entries here to bring them back
-  contacts: [] as FooterContact[],
+  contacts: [
+    {
+      label: "З питань квитків:",
+      name: "Валерія Глотова",
+      phone: "+380 73 215 09 36",
+      href: "tel:+380732150936",
+    },
+    {
+      label: "З питань партнерства:",
+      name: "Маркіян Ільчишин",
+      phone: "+380 68 929 21 05",
+      href: "tel:+380689292105",
+    },
+    {
+      label: "З питань програми:",
+      name: "Ірина Федяєва",
+      phone: "+380 63 263 08 87",
+      href: "tel:+380632630887",
+    },
+  ] satisfies FooterContact[],
   partners: [
     {
       label: "співорганізатор",

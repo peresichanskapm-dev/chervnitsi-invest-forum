@@ -36,11 +36,27 @@
   height: 3.8rem;
 }
 
+.contactsRow {
+  position: relative;
+  padding-block: 3.2rem;
+
+  /* pseudo-element, not border-bottom — a border would run the full padding box
+     and the rule has to stop at the container gutter, matching .bottom's divider */
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: var(--container-gutter);
+    bottom: 0;
+    height: 0.1rem;
+    background: #d2d2d2;
+  }
+}
+
 .contacts {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 3.6rem;
 }
 
 .contact {
@@ -191,9 +207,15 @@
     gap: 1.6rem;
   }
 
+  .contactsRow {
+    padding-block: 2.4rem;
+  }
+
   .contacts {
     flex-direction: row;
-    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5.6rem;
   }
 
   .contact {
@@ -220,7 +242,7 @@
     height: 6.4rem;
   }
 
-  /* theirs: while the row is tight the icons stack, so they never crowd the contacts */
+  /* tablet row is tight (logo + partners + socials), so icons stack to avoid crowding */
   .socials {
     flex-direction: column;
   }
@@ -240,7 +262,7 @@
   }
 
   .contacts {
-    gap: 2rem;
+    gap: 7.2rem;
   }
 
   .socials {
