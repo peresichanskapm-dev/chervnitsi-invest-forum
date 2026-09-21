@@ -249,5 +249,12 @@ export const speakersData = {
       photo: "/images/speakers/kyshakevych.webp",
       description: "Керівник з регіонального розвитку Blago.",
     },
+    {
+      firstName: "Євген",
+      lastName: "Клопотенко",
+      photo: "/images/speakers/klopotenko.webp",
+      description:
+        "Шеф-кухар, дослідник української кухні, співвласник гастрохолдингу «Інакші», лауреат 50NEXT, ідеолог проєкту з поліпшення культури харчування Cult Food, ініціатор внесення борщу до списку нематеріальної культурної спадщини ЮНЕСКО.",
+    },
   ] satisfies Speaker[],
 };

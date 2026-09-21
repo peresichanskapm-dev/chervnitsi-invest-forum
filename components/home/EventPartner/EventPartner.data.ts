@@ -62,5 +62,17 @@ export const eventPartnerData = {
       width: 2028,
       height: 2180,
     },
+    {
+      src: "/images/partners-frankof.webp",
+      alt: "Frankof",
+      width: 866,
+      height: 189,
+    },
+    {
+      src: "/images/partners-art-line.webp",
+      alt: "Art Line — івент-компанія",
+      width: 2012,
+      height: 625,
+    },
   ],
 };

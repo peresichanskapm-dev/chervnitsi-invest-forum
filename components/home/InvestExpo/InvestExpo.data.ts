@@ -28,5 +28,11 @@ export const investExpoData = {
       height: 2256,
       href: "https://www.kodrahouse.com/",
     },
+    {
+      src: "/images/partners-forrest.svg",
+      alt: "Forrest Trinity Resort",
+      width: 1350,
+      height: 275,
+    },
   ] satisfies InvestExpoLogo[],
 };

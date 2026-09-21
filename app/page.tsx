@@ -1,5 +1,6 @@
 import { About } from "@/components/home/About/About";
 import { AutoPartner } from "@/components/home/AutoPartner/AutoPartner";
+import { EnergyPartner } from "@/components/home/EnergyPartner/EnergyPartner";
 import { EventPartner } from "@/components/home/EventPartner/EventPartner";
 import { Footer } from "@/components/home/Footer/Footer";
 import { Form } from "@/components/home/Form/Form";
@@ -47,6 +48,7 @@ export default function Home() {
         <PremiumPartner />
         <EventPartner />
         <AutoPartner />
+        <EnergyPartner />
         <InvestExpo />
         <MediaPartners />
         <HotelPartners />
