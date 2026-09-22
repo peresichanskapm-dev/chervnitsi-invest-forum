@@ -1,3 +1,11 @@
+export type EventPartnerLogo = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  light?: boolean;
+};
+
 export const eventPartnerData = {
   label: "Event partner",
   logos: [
@@ -74,5 +82,12 @@ export const eventPartnerData = {
       width: 2012,
       height: 625,
     },
-  ],
+    {
+      src: "/images/partners-ticketsbox.svg",
+      alt: "Ticketsbox",
+      width: 640,
+      height: 82,
+      light: true,
+    },
+  ] satisfies EventPartnerLogo[],
 };

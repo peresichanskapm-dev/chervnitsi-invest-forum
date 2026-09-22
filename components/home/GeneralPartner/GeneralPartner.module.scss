@@ -6,8 +6,21 @@
   padding: 4.8rem 0;
 }
 
+.logoLink {
+  display: block;
+  max-width: 100%;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+}
+
 .logo {
+  display: block;
   width: 48rem;
+  max-width: 100%;
   height: auto;
 }
 
@@ -17,6 +30,19 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: calc(96rem + var(--container-gutter) * 2);
+  padding: 0 var(--container-gutter);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: -0.01rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 @media (min-width: 992px) {
@@ -31,5 +57,9 @@
 
   .label {
     font-size: 4.2rem;
+  }
+
+  .description {
+    font-size: 1.8rem;
   }
 }

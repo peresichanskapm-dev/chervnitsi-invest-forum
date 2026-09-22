@@ -2,6 +2,7 @@ import { About } from "@/components/home/About/About";
 import { AutoPartner } from "@/components/home/AutoPartner/AutoPartner";
 import { EnergyPartner } from "@/components/home/EnergyPartner/EnergyPartner";
 import { EventPartner } from "@/components/home/EventPartner/EventPartner";
+import { FlowerPartner } from "@/components/home/FlowerPartner/FlowerPartner";
 import { Footer } from "@/components/home/Footer/Footer";
 import { Form } from "@/components/home/Form/Form";
 import { GeneralPartner } from "@/components/home/GeneralPartner/GeneralPartner";
@@ -9,6 +10,7 @@ import { Header } from "@/components/home/Header/Header";
 import { Hero } from "@/components/home/Hero/Hero";
 import { HotelPartners } from "@/components/home/HotelPartners/HotelPartners";
 import { InvestExpo } from "@/components/home/InvestExpo/InvestExpo";
+import { InvestPartner } from "@/components/home/InvestPartner/InvestPartner";
 import { MediaPartners } from "@/components/home/MediaPartners/MediaPartners";
 import { Partnership } from "@/components/home/Partnership/Partnership";
 import { PremiumPartner } from "@/components/home/PremiumPartner/PremiumPartner";
@@ -45,11 +47,13 @@ export default function Home() {
         <Pricing dateKey={dateKey} />
         <GeneralPartner />
         <TitlePartner />
-        <PremiumPartner />
-        <EventPartner />
-        <AutoPartner />
         <EnergyPartner />
+        <InvestPartner />
+        <PremiumPartner />
         <InvestExpo />
+        <AutoPartner />
+        <FlowerPartner />
+        <EventPartner />
         <MediaPartners />
         <HotelPartners />
         <Form />

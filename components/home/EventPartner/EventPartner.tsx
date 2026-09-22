@@ -15,7 +15,11 @@ export function EventPartner() {
 
         <ul className={styles.grid}>
           {logos.map((logo, index) => (
-            <li key={`${logo.alt}-${index}`} className={styles.card} data-reveal="zoom">
+            <li
+              key={`${logo.alt}-${index}`}
+              className={logo.light ? `${styles.card} ${styles.cardLight}` : styles.card}
+              data-reveal="zoom"
+            >
               <Image
                 className={styles.logo}
                 src={logo.src}

@@ -1,3 +1,5 @@
+import type { SinglePartnerData } from "@/components/ui/SinglePartner/SinglePartner";
+
 export const autoPartnerData = {
   label: "Auto partner",
   logo: {
@@ -6,4 +8,4 @@ export const autoPartnerData = {
     width: 360,
     height: 130,
   },
-};
+} satisfies SinglePartnerData;

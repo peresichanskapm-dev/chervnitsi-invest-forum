@@ -35,6 +35,14 @@ export function HotelPartners() {
                 <p className={styles.discount}>{hotel.discount}</p>
                 <p className={styles.booking}>
                   {hotel.bookingLabel}
+                  {hotel.phone ? (
+                    <>
+                      {" "}
+                      <a className={styles.link} href={hotel.phone.href}>
+                        {hotel.phone.display}
+                      </a>
+                    </>
+                  ) : null}
                   {" — "}
                   <a
                     className={styles.link}
@@ -45,9 +53,11 @@ export function HotelPartners() {
                     {hotel.website.display}
                   </a>
                 </p>
-                <p className={styles.promo}>
-                  Промокод: <span className={styles.promoValue}>{hotel.promoCode}</span>
-                </p>
+                {hotel.promoCode ? (
+                  <p className={styles.promo}>
+                    Промокод: <span className={styles.promoValue}>{hotel.promoCode}</span>
+                  </p>
+                ) : null}
               </div>
             </li>
           ))}
