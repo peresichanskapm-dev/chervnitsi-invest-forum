@@ -1,4 +1,5 @@
 import { About } from "@/components/home/About/About";
+import { AlcoPartner } from "@/components/home/AlcoPartner/AlcoPartner";
 import { AutoPartner } from "@/components/home/AutoPartner/AutoPartner";
 import { EnergyPartner } from "@/components/home/EnergyPartner/EnergyPartner";
 import { EventPartner } from "@/components/home/EventPartner/EventPartner";
@@ -10,7 +11,6 @@ import { Header } from "@/components/home/Header/Header";
 import { Hero } from "@/components/home/Hero/Hero";
 import { HotelPartners } from "@/components/home/HotelPartners/HotelPartners";
 import { InvestExpo } from "@/components/home/InvestExpo/InvestExpo";
-import { InvestPartner } from "@/components/home/InvestPartner/InvestPartner";
 import { MediaPartners } from "@/components/home/MediaPartners/MediaPartners";
 import { Partnership } from "@/components/home/Partnership/Partnership";
 import { PremiumPartner } from "@/components/home/PremiumPartner/PremiumPartner";
@@ -48,10 +48,10 @@ export default function Home() {
         <GeneralPartner />
         <TitlePartner />
         <EnergyPartner />
-        <InvestPartner />
         <PremiumPartner />
         <InvestExpo />
         <AutoPartner />
+        <AlcoPartner />
         <FlowerPartner />
         <EventPartner />
         <MediaPartners />

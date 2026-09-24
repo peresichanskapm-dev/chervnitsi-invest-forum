@@ -89,5 +89,12 @@ export const eventPartnerData = {
       height: 82,
       light: true,
     },
+    {
+      src: "/images/partners-vyzhnytsia.webp",
+      alt: "Громада Вижницька",
+      width: 500,
+      height: 500,
+      light: true,
+    },
   ] satisfies EventPartnerLogo[],
 };

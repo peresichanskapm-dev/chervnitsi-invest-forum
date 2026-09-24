@@ -164,18 +164,6 @@ const day1Main: ProgramListBlock[] = [
       ],
     },
   },
-  {
-    kind: "entry",
-    entry: {
-      time: "13:25 - 14:00",
-      type: "панельна дискусія",
-      title: "Системний капітал: як гроші працюють сьогодні та створюють майбутнє",
-      speakers: [
-        { name: "Яніна Соколова", description: "Українська журналістка та громадська діячка" },
-        { name: "Василь Прус", description: "Комерційний директор Advance Finance Alliance" },
-      ],
-    },
-  },
   { kind: "bar", label: "ПЕРЕРВА НА ЛАНЧ", tone: "dark", time: "14:00 - 15:00" },
   { kind: "bar", label: "ДРУГА ЧАСТИНА", tone: "accent" },
   {

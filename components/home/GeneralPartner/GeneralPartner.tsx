@@ -20,10 +20,14 @@ export function GeneralPartner() {
       <span className={styles.label} data-reveal="fade">
         {label}
       </span>
-      <div className={styles.description} data-reveal="fade">
-        {description.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <div className={styles.container}>
+        <article className={styles.card} data-reveal="fade">
+          <div className={styles.description}>
+            {description.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </article>
       </div>
     </section>
   );

@@ -3,12 +3,13 @@ import type { SinglePartnerData } from "@/components/ui/SinglePartner/SinglePart
 export const energyPartnerData = {
   label: "Енергетичний партнер",
   logo: {
-    src: "/images/partners-codex-energy.webp",
+    src: "/images/partners-codex-energy-v2.svg",
     alt: "Codex Energy",
-    width: 1464,
-    height: 553,
+    width: 1066,
+    height: 285,
   },
   href: "https://chernovtsy.codexenergy.com.ua",
+  title: "Codex Energy",
   description: [
     "Codex Energy — енергетичний девелопер нового формату, частина Ribas Hotels Group.",
     "Компанія створює та розвиває енергетичні активи, поєднуючи приватний капітал, сучасні технології та професійний девелопмент. Основний формат проєктів — гібридні енергопарки, що поєднують сонячну генерацію (СЕС) та установки зберігання енергії (УЗЕ).",
