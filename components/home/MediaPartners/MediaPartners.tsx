@@ -26,7 +26,11 @@ export function MediaPartners() {
             );
 
             return (
-              <li key={`${logo.alt}-${index}`} className={styles.card} data-reveal="zoom">
+              <li
+                key={`${logo.alt}-${index}`}
+                className={"light" in logo && logo.light ? `${styles.card} ${styles.cardLight}` : styles.card}
+                data-reveal="zoom"
+              >
                 {logo.href ? (
                   <a className={styles.link} href={logo.href} target="_blank" rel="noreferrer noopener">
                     {image}

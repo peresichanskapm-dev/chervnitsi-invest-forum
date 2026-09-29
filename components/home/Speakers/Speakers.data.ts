@@ -101,13 +101,6 @@ export const speakersData = {
         "Архітекторка, громадська діячка, співзасновниця та СЕО архітектурно-проєктної компанії АІММ. Голова правління Фонду Архітектурної палати України.",
     },
     {
-      firstName: "Володимир",
-      lastName: "Непийвода",
-      photo: "/images/speakers/nepyivoda.webp",
-      description:
-        "Співвласник та керуючий партнер YOD Group — компанії, що більше 20 років створює дизайн для ресторанів та готелів в Україні та за кордоном. Більше 200 реалізованих проєктів, 30 міжнародних відзнак. Buddha Bar New-York включений до топ-100 найкрасивіших ресторанів світу за рейтингом Grands Prix du Design від UNESCO. Проєкти у галузі рекреації: Hay Boutique Hotel and SPA by Edem Family, Mountain Residence, Emily Resort, Verholy Relax Park.",
-    },
-    {
       firstName: "Микола",
       lastName: "Каблука",
       photo: "/images/speakers/kabluka.webp",
@@ -253,7 +246,7 @@ export const speakersData = {
     {
       firstName: "Руслан",
       lastName: "Линник",
-      photo: "/images/speakers/lynnyk.webp",
+      photo: "/images/speakers/lynnyk-v2.webp",
       description: "Керуючий партнер фонду Majinx Capital.",
     },
     {
@@ -268,6 +261,20 @@ export const speakersData = {
       photo: "/images/speakers/verkhovskyi.webp",
       description:
         "Засновник Бізнес-клубу Дмитра Верховського. Експерт з побудови комунікацій та перемовин. Говорить про складне простими словами.",
+    },
+    {
+      firstName: "Дмитро",
+      lastName: "Бонеско",
+      photo: "/images/speakers/bonesko.webp",
+      description:
+        "Співвласник та арт-директор YOD Group. Компанія 22 роки працює в комерційному дизайні, має більше 200 реалізованих проєктів в Україні та за кордоном, 52 міжнародні нагороди за дизайн в галузі гостинності.",
+    },
+    {
+      firstName: "Денис",
+      lastName: "Мусіч",
+      photo: "/images/speakers/musich.webp",
+      description:
+        "CEO, Smart Security. Smart Building — це не про технології. Це про вартість активу. Поговоримо про те, як концепція Smart Building, BMS та GRMS впливають на OPEX, енергоефективність, якість управління та, зрештою, капіталізацію нерухомості.",
     },
   ] satisfies Speaker[],
 };

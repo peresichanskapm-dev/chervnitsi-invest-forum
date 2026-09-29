@@ -96,5 +96,12 @@ export const eventPartnerData = {
       height: 500,
       light: true,
     },
+    {
+      src: "/images/partners-broken-bro.svg",
+      alt: "Broken Bro",
+      width: 509,
+      height: 557,
+      light: true,
+    },
   ] satisfies EventPartnerLogo[],
 };

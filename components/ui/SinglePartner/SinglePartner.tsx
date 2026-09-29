@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./SinglePartner.module.scss";
 
 export type SinglePartnerData = {
-  label: string;
+  label?: string;
   logo: {
     src: string;
     alt: string;
@@ -28,11 +28,13 @@ export function SinglePartner({ label, logo, href, title, description }: SingleP
   );
 
   return (
-    <section className={styles.section} aria-label={label}>
+    <section className={styles.section} aria-label={label ?? logo.alt}>
       <div className={styles.container}>
-        <p className={styles.label} data-reveal="fade">
-          {label}
-        </p>
+        {label ? (
+          <p className={styles.label} data-reveal="fade">
+            {label}
+          </p>
+        ) : null}
 
         {description?.length ? (
           <div className={styles.panel} data-reveal="zoom">

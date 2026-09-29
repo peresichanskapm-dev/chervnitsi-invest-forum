@@ -4,6 +4,7 @@ export type MediaPartnerLogo = {
   width: number;
   height: number;
   href?: string;
+  light?: boolean;
 };
 
 export const mediaPartnersData = {
@@ -44,6 +45,20 @@ export const mediaPartnersData = {
       alt: "CitySites — мережі міських сайтів",
       width: 170,
       height: 106,
+    },
+    {
+      src: "/images/partners-buk-media.svg",
+      alt: "БУК медіа",
+      width: 184,
+      height: 92,
+    },
+    { src: "/images/partners-finmap.webp", alt: "Finmap", width: 2148, height: 450 },
+    {
+      src: "/images/partners-enc-news.webp",
+      alt: "ENC News — Economics and Culture",
+      width: 810,
+      height: 314,
+      light: true,
     },
   ] satisfies MediaPartnerLogo[],
 };

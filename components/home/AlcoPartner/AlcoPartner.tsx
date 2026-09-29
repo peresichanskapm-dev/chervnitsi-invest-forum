@@ -1,7 +1,13 @@
 import { SinglePartner } from "@/components/ui/SinglePartner/SinglePartner";
 
-import { alcoPartnerData } from "./AlcoPartner.data";
+import { alcoPartnersData } from "./AlcoPartner.data";
 
 export function AlcoPartner() {
-  return <SinglePartner {...alcoPartnerData} />;
+  return (
+    <>
+      {alcoPartnersData.map((partner) => (
+        <SinglePartner key={partner.logo.src} {...partner} />
+      ))}
+    </>
+  );
 }
