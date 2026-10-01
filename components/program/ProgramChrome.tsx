@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 import { formData } from "@/components/home/Form/Form.data";
+import { getLeadSource } from "@/lib/leadSource";
 import { isPhoneComplete } from "@/lib/phoneMask";
 import { usePhoneMask } from "@/lib/usePhoneMask";
 import { getTrackingForForm } from "@/lib/utm";
@@ -52,7 +53,7 @@ export function ProgramContact({ variantKey }: { variantKey: ProgramKey }) {
           name,
           email,
           phone: phoneMask.value,
-          formSource: "Форма на сторінці програми",
+          formSource: getLeadSource().formSource || "Форма на сторінці програми",
           ...getTrackingForForm(),
         }),
       });
@@ -70,7 +71,7 @@ export function ProgramContact({ variantKey }: { variantKey: ProgramKey }) {
   };
 
   return (
-    <section className={`${styles.contact} ${marginClass}`} data-reveal="">
+    <section className={`${styles.contact} ${marginClass}`} id="program-contact" data-reveal="">
       <div className={styles.contactContent}>
         <p className={styles.contactEyebrow}>{dictionary.contactEyebrow}</p>
         <div className={styles.contactTitle}>

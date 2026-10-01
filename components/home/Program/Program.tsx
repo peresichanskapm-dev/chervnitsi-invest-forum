@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 
+import { TierNotice } from "@/components/ui/TierNotice/TierNotice";
+
 import { type ProgramCard, type ProgramDay, programData } from "./Program.data";
 import styles from "./Program.module.scss";
 
@@ -62,6 +64,9 @@ function Panel({ day, active }: { day: ProgramDay; active: boolean }) {
           className={styles.hero}
         />
         <p className={styles.intro}>{day.intro}</p>
+        {day.tierNotice ? (
+          <TierNotice {...day.tierNotice} href="#form" formSource="Підняти категорію квитка — програма, день 2" />
+        ) : null}
       </div>
 
       <div className={styles.rows}>

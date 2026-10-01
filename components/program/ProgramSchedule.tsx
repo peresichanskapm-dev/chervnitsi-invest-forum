@@ -3,6 +3,8 @@
 import { Fragment, type CSSProperties, type ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import { TierNotice } from "@/components/ui/TierNotice/TierNotice";
+
 import {
   getDefaultProgramKey,
   getProgramKey,
@@ -164,6 +166,7 @@ export function ProgramSchedule({ afterContent }: Props) {
   const [openSelect, setOpenSelect] = useState<"day" | "stage" | null>(null);
   const filtersRef = useRef<HTMLDivElement>(null);
   const activeVariant = dictionary.variants[activeKey];
+  const tierNotice = dictionary.tierNotice[activeVariant.day];
   const stagesForDay = useMemo(() => getStagesForDay(selectedDay), [selectedDay]);
   const dayOptions = Object.keys(dictionary.days) as ProgramDay[];
   const sideProgram =
@@ -285,6 +288,9 @@ export function ProgramSchedule({ afterContent }: Props) {
 
         <div className={styles.program}>
           <div className={styles.programContent}>
+            {tierNotice ? (
+              <TierNotice {...tierNotice} href="#program-contact" formSource="Підняти категорію квитка — програма" />
+            ) : null}
             {activeVariant.blocks?.map((block, index) => {
               if (block.kind === "bar") {
                 return <ProgramBar block={block} index={index} key={`${block.label}-${index}`} />;

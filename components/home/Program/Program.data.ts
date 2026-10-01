@@ -15,6 +15,7 @@ export type ProgramDay = {
   /** rendered wide, photo beside the copy, above the row of cards */
   feature?: ProgramCard;
   cards: ProgramCard[];
+  tierNotice?: { label: string; cta: string };
 };
 
 export const programData = {
@@ -63,6 +64,7 @@ export const programData = {
       tabLabel: "День 2",
       intro:
         "Другий день Chernivtsi Invest Forum створений для того, щоб вийти за межі класичної бізнес-конференції. На учасників VIP і Premium чекає ексклюзивна програма у мальовничій Вижниці. Саме у неформальній атмосфері виникають найкращі знайомства, народжуються партнерства та приймаються рішення про майбутні інвестиції.",
+      tierNotice: { label: "Лише для категорії Premium та VIP", cta: "Підняти категорію квитка" },
       hero: "/images/program/hero-day2.webp",
       heroAlt: "Учасники форуму спілкуються на відкритому повітрі",
       cards: [

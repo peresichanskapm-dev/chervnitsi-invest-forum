@@ -60,5 +60,6 @@ export const mediaPartnersData = {
       height: 314,
       light: true,
     },
+    { src: "/images/partners-ua-people.webp", alt: "UA.PEOPLE", width: 511, height: 170 },
   ] satisfies MediaPartnerLogo[],
 };

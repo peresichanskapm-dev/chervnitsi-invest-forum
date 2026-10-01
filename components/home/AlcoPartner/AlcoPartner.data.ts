@@ -2,7 +2,7 @@ import type { SinglePartnerData } from "@/components/ui/SinglePartner/SinglePart
 
 export const alcoPartnersData = [
   {
-    label: "Alco partner",
+    label: "Алкогольні спонсори",
     logo: {
       src: "/images/partners-jura.webp",
       alt: "Jura Single Malt Scotch Whisky",
