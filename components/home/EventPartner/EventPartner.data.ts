@@ -97,5 +97,11 @@ export const eventPartnerData = {
       height: 557,
       light: true,
     },
+    {
+      src: "/images/partners-vk-tur.webp",
+      alt: "ВК Тур",
+      width: 1181,
+      height: 866,
+    },
   ] satisfies EventPartnerLogo[],
 };

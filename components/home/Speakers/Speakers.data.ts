@@ -416,5 +416,18 @@ export const speakersData = {
       description:
         "Спікер на сайд івенті 4 жовтня. Ректор ЧНУ, доктор економічних наук, професор і співзасновник Шумпетерівської школи інновацій.",
     },
+    {
+      firstName: "Дмитро",
+      lastName: "Ливч",
+      photo: "/images/speakers/lyvch.webp",
+      description:
+        "Керуючий партнер напрямку публічної політики консалтингової компанії CIVITTA, голова правління аналітичного центру EasyBusiness.",
+    },
+    {
+      firstName: "Володимир",
+      lastName: "Козюк",
+      photo: "/images/speakers/koziuk.webp",
+      description: "Народний художник України.",
+    },
   ] satisfies Speaker[],
 };
