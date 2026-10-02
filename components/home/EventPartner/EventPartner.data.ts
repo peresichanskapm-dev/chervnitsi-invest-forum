@@ -59,12 +59,6 @@ export const eventPartnerData = {
       height: 1243,
     },
     {
-      src: "/images/partners-hetman.svg",
-      alt: "Hetman — перша елітна горілка країни",
-      width: 333,
-      height: 248,
-    },
-    {
       src: "/images/partners-forma-hub.webp",
       alt: "Forma Hub — хаб виробників косметики",
       width: 2028,

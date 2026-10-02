@@ -18,4 +18,12 @@ export const alcoPartnersData = [
       height: 795,
     },
   },
+  {
+    logo: {
+      src: "/images/partners-hetman.svg",
+      alt: "Hetman — перша елітна горілка країни",
+      width: 333,
+      height: 248,
+    },
+  },
 ] satisfies SinglePartnerData[];
